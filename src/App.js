@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './TakeCoverLogo.webp';
 import './App.css';
 
 function App() {
@@ -6,17 +6,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <br></br>
+
+        <h1>Coming Soon!</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Playing the best of the 60's, 70's, 80's & beyond!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>We will-we will-rock you.</p>
       </header>
     </div>
   );
