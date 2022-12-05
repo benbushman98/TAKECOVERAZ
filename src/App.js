@@ -12,7 +12,7 @@ function App() {
         <p>
           Playing the best of the 60's, 70's, 80's, 90's & beyond!
         </p>
-        <p>We will-we will-rock you.</p>
+        <p>We will-we will-rock you!</p>
       </header>
     </div>
   );
