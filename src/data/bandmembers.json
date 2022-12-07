@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Jay Klepinger",
+        "instrument": "Drummer",
+        "img": "/images/jay.jpg",
+        "alt": "Jay Klepinger",
+        "bio": "Jay grew up in Mesa, Arizona and was hooked on drums from the early 70`s after watching his brother rock on his 9 piece Slingerland kit. Jay first started hacking away at “the skins” at an early age using butter knives because his older brother would hide the sticks in an effort to protect the kit from Jay`s destructive nature. Eventually, the sticks were handed over and Jay was able to start playing his brother`s huge 9 piece Slingerland drumset with double bass drums. The musical journey continued with Jay spending long hours after school practicing parts recorded by other notable hard hitting drummers like Neil Peart, Steve Smith, Simon Phillips and others. At this point everything was about fast fills and double bass rolls. It was during these early years Jay developed skills to handle some of the most challenging drum parts which gave him confidence to press forward. Today, he now enjoys a healthy balance of family, work and music. According to Jay - he is “living the dream” as a rock drummer! Relishing in the best of both worlds, he frequently tells others - when asked what he does for a living - he proclaims, “banker by day and rocker by night!”"
+    },
+    {
+        "id": 2,
+        "name": "Chad Bowman",
+        "instrument": "Vocalist, Guitar, Bass",
+        "img": "/images/chad.jpg",
+        "alt": "Chad Bowman",
+        "bio": "Chad Bowman has been performing live music for over 20 years. He plays both Guitar and Bass guitar and dabbles in Piano, Banjo, Ukulele, and Mandolin. Chad had taught guitar professionally for 16 years. He has toured and played live in various states across the country and has had the opportunity to open for such groups as Firefall, Roger Kline and the Peacemakers, 3 Doors Down, and the All American Rejects. Chad loves Rock n Roll and finds passion in writing and recording original music as well as performing. "
+    },
+    {
+        "id": 3,
+        "name": "Jeff Dennis",
+        "instrument": "Vocalist, Guitar, Bass",
+        "img": "/images/jeff.jpg",
+        "alt": "Jeff Dennis",
+        "bio": "Jeff Dennis grew up in Chandler Arizona in a house filled with the sounds of legends, from Lennon and McCartney, to Stevie Wonder, to Dave Grohl. At age 10 he was learning songs by ear on the piano. By 12 he was playing drums with his dad on guitar and uncle on bass. And at age 13 Jeff was learning Nirvana, Hendrix, and Pearl Jam on the guitar. At 19 Jeff moved to Southern California where he would receive his  bachelor`s degree in music, and serve as a church music director and song leader for adults and students. During that time Jeff began playing in bands professionally, touring, teaching, and producing music. Jeff has shared the stage with many names including Paramore, Lostprophets, Berlin, Parachute, Andy Grammer, NeedtoBreathe, Mat Kearney, Steven Curtis Chapman, Justin Moore, Jake Owen, and more. In addition to live performances, Jeff has recorded and produced several studio recordings, and can be heard on National television, as well as US and international streaming platforms such as Netflix. Jeff, having relocated back to his home state of Arizona with his wife, continues to sing, play, produce, and teach music throughout the greater Phoenix area." 
+    }
+]

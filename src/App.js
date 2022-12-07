@@ -1,20 +1,49 @@
-import logo from './TakeCoverLogo.webp';
-import './App.css';
+import DrawerAppBar from './components/Drawer';
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import ErrorPage from "./pages/Error/index";
+import Home from "./pages/Home/index";
+import About from './pages/About/index';
+import Contact from "./pages/Contact/index";
+import Playlist from "./pages/Playlist/index";
+
+const router = createBrowserRouter([
+  {
+    path: '/home',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/playlist",
+    element: <Playlist />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+    errorElement: <ErrorPage />,
+  },
+]);
+
+const style = {
+  height: "160px"
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <br></br>
+    <>
+      <div style={style}>
+        <DrawerAppBar />
+      </div>
+      <div className='m-0 bg-black'>
+        <RouterProvider router={router} />
+      </div>
 
-        <h1>Coming Soon!</h1>
-        <p>
-          Playing the best of the 60's, 70's, 80's, 90's & beyond!
-        </p>
-        <p>We will-we will-rock you.</p>
-      </header>
-    </div>
+    </>
   );
 }
 

@@ -1,0 +1,577 @@
+[
+    {
+        "id": 1,
+        "artist": "Cage The Elephant",
+        "song": "Ain`t No Rest For The Wicked"
+    },
+    {
+        "id": 2,
+        "artist": "George Strait",
+        "song": "All My Exes Live In Texas"
+    },
+    {
+        "id": 3,
+        "artist": "Smashmouth",
+        "song": "All Star"
+    },
+    {
+        "id": 4,
+        "artist": "Neon Trees",
+        "song": "Animal"
+    },
+    {
+        "id": 5,
+        "artist": "Journey",
+        "song": "Anyway You Want It"
+    },
+    {
+        "id": 6,
+        "artist": "Jet",
+        "song": "Are You Gonna Be My Girl"
+    },
+    {
+        "id": 7,
+        "artist": "Tom Petty",
+        "song": "American Girl"
+    },
+    {
+        "id": 8,
+        "artist": "Refreshments",
+        "song": "Banditos"
+    },
+    {
+        "id": 9,
+        "artist": "TRex",
+        "song": "Bang A Gong"
+    },
+    {
+        "id": 10,
+        "artist": "Weezer",
+        "song": "Beverly Hills"
+    },
+    {
+        "id": 11,
+        "artist": "Michael Jackson",
+        "song": "Billie Jean"
+    },
+    {
+        "id": 12,
+        "artist": "Beatles",
+        "song": "Birthday"
+    },
+    {
+        "id": 13,
+        "artist": "Elvis",
+        "song": "Blue Suede Shoes"
+    },
+    {
+        "id": 14,
+        "artist": "Brooks and Dunn",
+        "song": "Boot Skootin Boogie"
+    },
+    {
+        "id": 15,
+        "artist": "Commodores",
+        "song": "Brickhouse"
+    },
+    {
+        "id": 16,
+        "artist": "Tom Petty",
+        "song": "Breakdown"
+    },
+    {
+        "id": 17,
+        "artist": "Van Morrison",
+        "song": "Brown Eyed Girl"
+    },
+    {
+        "id": 18,
+        "artist": "Semisonic",
+        "song": "Closing Time"
+    },
+    {
+        "id": 19,
+        "artist": "Beatles",
+        "song": "Come Together"
+    },
+    {
+        "id": 20,
+        "artist": "Queen",
+        "song": "Crazy Little Thing Called Love"
+    },
+    {
+        "id": 21,
+        "artist": "Red Hot Chili Peppers",
+        "song": "Dani California"
+    },
+    {
+        "id": 22,
+        "artist": "Tom Petty",
+        "song": "Don`t Do Me Like That"
+    },
+    {
+        "id": 23,
+        "artist": "Oasis",
+        "song": "Don`t Look Back In Anger"
+    },
+    {
+        "id": 24,
+        "artist": "Journey",
+        "song": "Don`t Stop Believin"
+    },
+    {
+        "id": 25,
+        "artist": "Simple Minds",
+        "song": "Don`t You Forget About Me"
+    },
+    {
+        "id": 26,
+        "artist": "Human League",
+        "song": "Don`t You Want Me"
+    },
+    {
+        "id": 27,
+        "artist": "Bobby Darrin/The Penguins",
+        "song": "Dream Lover/Earth Angel Medley"
+    },
+    {
+        "id": 28,
+        "artist": "Beatles",
+        "song": "Drive My Car/Taxman"
+    },
+    {
+        "id": 29,
+        "artist": "Fleetwood Mac",
+        "song": "Dreams"
+    },
+    {
+        "id": 30,
+        "artist": "Eric Church",
+        "song": "Drink In My Hand"
+    },
+    {
+        "id": 31,
+        "artist": "Neon Trees",
+        "song": "Everybody Talks"
+    },
+    {
+        "id": 32,
+        "artist": "Tears for Fears",
+        "song": "Everybody Wants To Rule The World"
+    },
+    {
+        "id": 33,
+        "artist": "Billy Squire",
+        "song": "Everybody Wants You"
+    },
+    {
+        "id": 34,
+        "artist": "George Strait",
+        "song": "Fireman"
+    },
+    {
+        "id": 35,
+        "artist": "The Pretenders",
+        "song": "500 Miles"
+    },
+    {
+        "id": 36,
+        "artist": "Beatles",
+        "song": "Get Back"
+    },
+    {
+        "id": 37,
+        "artist": "Spencer Davis Group",
+        "song": "Gimmie Some Lovin"
+    },
+    {
+        "id": 38,
+        "artist": "ZZ top",
+        "song": "Gimmie All Your Lovin"
+    },
+    {
+        "id": 39,
+        "artist": "Black Keys",
+        "song": "Gold on the Ceiling"
+    },
+    {
+        "id": 40,
+        "artist": "Beatles",
+        "song": "Hard Days Night"
+    },
+    {
+        "id": 41,
+        "artist": "Maroon 5",
+        "song": "Harder To Breath"
+    },
+    {
+        "id": 42,
+        "artist": "The Lumineers",
+        "song": "Ho Hey"
+    },
+    {
+        "id": 43,
+        "artist": "Elvis",
+        "song": "Hound Dog"
+    },
+    {
+        "id": 44,
+        "artist": "Eagles",
+        "song": "Hotel California"
+    },
+    {
+        "id": 45,
+        "artist": "Randy Houser",
+        "song": "How Country Feels"
+    },
+    {
+        "id": 46,
+        "artist": "Duran Duran",
+        "song": "Hungry Like the Wolf"
+    },
+    {
+        "id": 47,
+        "artist": "Vanilla Ice",
+        "song": "Ice Ice Baby"
+    },
+    {
+        "id": 48,
+        "artist": "Tim McGraw",
+        "song": "I Like It I Love It"
+    },
+    {
+        "id": 49,
+        "artist": "Modern English",
+        "song": "I Melt w/ You"
+    },
+    {
+        "id": 50,
+        "artist": "Beatles",
+        "song": "I Saw Her Standing There"
+    },
+    {
+        "id": 51,
+        "artist": "Cheap Trick",
+        "song": "I Want You To want Me"
+    },
+    {
+        "id": 52,
+        "artist": "Tom Petty",
+        "song": "I Won`t back Down"
+    },
+    {
+        "id": 53,
+        "artist": "Tonic",
+        "song": "If You Could Only See"
+    },
+    {
+        "id": 54,
+        "artist": "Weezer",
+        "song": "Island in the Sun"
+    },
+    {
+        "id": 55,
+        "artist": "R.E.M.",
+        "song": "It`s The End of The World"
+    },
+    {
+        "id": 56,
+        "artist": "Tommy Tutone",
+        "song": "Jenny Jenny"
+    },
+    {
+        "id": 57,
+        "artist": "Rick Springfield",
+        "song": "Jessie`s Girl"
+    },
+    {
+        "id": 58,
+        "artist": "Chuck Berry",
+        "song": "Johnny B. Goode"
+    },
+    {
+        "id": 59,
+        "artist": "The Stones",
+        "song": "Jumpin Jack Flash"
+    },
+    {
+        "id": 60,
+        "artist": "The Cars",
+        "song": "Just What I Needed"
+    },
+    {
+        "id": 61,
+        "artist": "George Satelittes",
+        "song": "Keep Your Hands To Yourself"
+    },
+    {
+        "id": 62,
+        "artist": "ZZ Top",
+        "song": "La Grange"
+    },
+    {
+        "id": 63,
+        "artist": "Foo Fighters",
+        "song": "Learn To Fly"
+    },
+    {
+        "id": 64,
+        "artist": "Mumford and Sons",
+        "song": "Little Lion Man"
+    },
+    {
+        "id": 65,
+        "artist": "AC/DC",
+        "song": "Long Way To The Top"
+    },
+    {
+        "id": 66,
+        "artist": "Stones",
+        "song": "Miss You"
+    },
+    {
+        "id": 67,
+        "artist": "Billy Idol",
+        "song": "Mony Mony"
+    },
+    {
+        "id": 68,
+        "artist": "Counting Crows",
+        "song": "Mr. Jones"
+    },
+    {
+        "id": 69,
+        "artist": "Rod Stewart",
+        "song": "Maggie Mae"
+    },
+    {
+        "id": 70,
+        "artist": "Tom Petty",
+        "song": "Mary Jane`s Last Dance"
+    },
+    {
+        "id": 71,
+        "artist": "Wilson Pickett",
+        "song": "Mustang Sally"
+    },
+    {
+        "id": 72,
+        "artist": "U2",
+        "song": "Mysterious Ways"
+    },
+    {
+        "id": 73,
+        "artist": "LIT",
+        "song": "My Own Worst Enemy"
+    },
+    {
+        "id": 74,
+        "artist": "Brooks &amp; Dunn",
+        "song": "Neon Moon"
+    },
+    {
+        "id": 75,
+        "artist": "Bob Seeger",
+        "song": "Old Time Rock n Roll"
+    },
+    {
+        "id": 76,
+        "artist": "Van Halen",
+        "song": "Panama"
+    },
+    {
+        "id": 77,
+        "artist": "White Cherry",
+        "song": "Play That Funky Music"
+    },
+    {
+        "id": 78,
+        "artist": "Sublime",
+        "song": "Santeria"
+    },
+    {
+        "id": 79,
+        "artist": "Stones",
+        "song": "Satisfaction"
+    },
+    {
+        "id": 80,
+        "artist": "Third Eye Blind",
+        "song": "Semi-Charmed Life"
+    },
+    {
+        "id": 81,
+        "artist": "White Stripes",
+        "song": "Seven Nation Army"
+    },
+    {
+        "id": 82,
+        "artist": "ZZ Top",
+        "song": "Sharp Dressed Man"
+    },
+    {
+        "id": 83,
+        "artist": "Cake",
+        "song": "Short Skirt Long Jacket"
+    },
+    {
+        "id": 84,
+        "artist": "Beatles",
+        "song": "Something"
+    },
+    {
+        "id": 85,
+        "artist": "Cake",
+        "song": "Short"
+    },
+    {
+        "id": 86,
+        "artist": "Killers",
+        "song": "Somebody Told Me"
+    },
+    {
+        "id": 87,
+        "artist": "Blur",
+        "song": "Song 2"
+    },
+    {
+        "id": 88,
+        "artist": "Atlanta Rhythm Section",
+        "song": "Spooky"
+    },
+    {
+        "id": 89,
+        "artist": "Bryan Adams",
+        "song": "Summer of 69"
+    },
+    {
+        "id": 90,
+        "artist": "Stevie Wonder",
+        "song": "Superstition"
+    },
+    {
+        "id": 91,
+        "artist": "Neil Diamond",
+        "song": "Sweet Caroline"
+    },
+    {
+        "id": 92,
+        "artist": "Aerosmith",
+        "song": "Sweet Emotion"
+    },
+    {
+        "id": 93,
+        "artist": "Lynyrd Skynyrd",
+        "song": "Sweet Home Alabama"
+    },
+    {
+        "id": 94,
+        "artist": "Eagles",
+        "song": "Take It Easy"
+    },
+    {
+        "id": 95,
+        "artist": "Eagles",
+        "song": "Take It To The Limit"
+    },
+    {
+        "id": 96,
+        "artist": "Chris Stapleton",
+        "song": "Tennessee Whiskey"
+    },
+    {
+        "id": 97,
+        "artist": "Buddy Holly",
+        "song": "That`ll Be The Day"
+    },
+    {
+        "id": 98,
+        "artist": "Garth Brooks",
+        "song": "The Dance"
+    },
+    {
+        "id": 99,
+        "artist": "Stevie Ray Vaughn",
+        "song": "The House Is A Rockin`"
+    },
+    {
+        "id": 100,
+        "artist": "Jimmy Eat World",
+        "song": "The Middle"
+    },
+    {
+        "id": 101,
+        "artist": "Frank Sinatra",
+        "song": "The Way You Look Tonight"
+    },
+    {
+        "id": 102,
+        "artist": "Maroon 5",
+        "song": "This Love"
+    },
+    {
+        "id": 103,
+        "artist": "Beatles",
+        "song": "Twist and Shout"
+    },
+    {
+        "id": 104,
+        "artist": "Spin Doctors",
+        "song": "Two Princes"
+    },
+    {
+        "id": 105,
+        "artist": "Darius Rucker",
+        "song": "Wagon Wheel"
+    },
+    {
+        "id": 106,
+        "artist": "Aerosmith",
+        "song": "Walk This Way"
+    },
+    {
+        "id": 107,
+        "artist": "Sublime",
+        "song": "What I Got"
+    },
+    {
+        "id": 108,
+        "artist": "U2",
+        "song": "Where The Street Have No Name –"
+    },
+    {
+        "id": 109,
+        "artist": "Billy Idol",
+        "song": "White Wedding"
+    },
+    {
+        "id": 110,
+        "artist": "U2",
+        "song": "With or Without You"
+    },
+    {
+        "id": 111,
+        "artist": "Eric Clapton",
+        "song": "Wonderful Tonight"
+    },
+    {
+        "id": 112,
+        "artist": "Oasis",
+        "song": "Wonderwall"
+    },
+    {
+        "id": 113,
+        "artist": "Coldplay",
+        "song": "Yellow"
+    },
+    {
+        "id": 114,
+        "artist": "Bon Jovi",
+        "song": "You Give Love A Band Name"
+    },
+    {
+        "id": 115,
+        "artist": "Bruno Mars",
+        "song": "Uptown Funk"
+    }
+]
