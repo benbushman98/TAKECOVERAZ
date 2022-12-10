@@ -8,7 +8,7 @@ import Playlist from "./pages/Playlist/index";
 
 const router = createBrowserRouter([
   {
-    path: '/home',
+    path: '/',
     element: <Home />,
     errorElement: <ErrorPage />,
   },

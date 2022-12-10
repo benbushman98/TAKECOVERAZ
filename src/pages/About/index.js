@@ -1,5 +1,5 @@
 import React from 'react'
-import BandMembers from '../../components/BandMembers.js'
+import BandMembers from '../../components/BandMembers/index.js'
 
 function About() {
   return (

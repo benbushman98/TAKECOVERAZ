@@ -14,8 +14,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Playlist', 'Contact'];
+const drawerWidth = 200;
+const navItems = ['About', 'Playlist', 'Contact'];
 
 const style = {
     img: {
@@ -40,11 +40,14 @@ function DrawerAppBar(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} className="bg-black text-white">
-            <Typography variant="h6" sx={{ my: 2 }} className="bg-black text-white">
+            <Typography variant="h5" sx={{ my: 2 }} className="bg-black text-white text-uppercase">
                 Menu
             </Typography>
             <Divider />
             <List className="bg-black text-white">
+                <ListItemButton sx={{ textAlign: 'center' }} href={`/`}>
+                    <ListItemText primary={"Home"} />
+                </ListItemButton>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }} href={`/${item}`}>
@@ -72,7 +75,7 @@ function DrawerAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <img src="images/take-cover_tiny.webp" sx={{display: {xs: "none"} }} className="App-logo m-2 mx-1 px-5" alt="logo"  style={style.img} />
+                    <img src="images/take-cover_tiny.webp" sx={{ display: { xs: "none" } }} className="App-logo m-2 mx-1 px-5" alt="logo" style={style.img} />
                     <Typography
                         variant="h6"
                         component="div"
@@ -81,6 +84,9 @@ function DrawerAppBar(props) {
                     </Typography>
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Button href={`/`} sx={{ color: '#fff' }}>
+                            {"Home"}
+                        </Button>
                         {navItems.map((item) => (
                             <Button href={`/${item}`} key={item} sx={{ color: '#fff' }}>
                                 {item}
