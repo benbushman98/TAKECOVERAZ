@@ -1,6 +1,7 @@
 import React from 'react';
 import BandFacts from "../../components/BandFacts/index"
 import Reviews from "../../components/Reviews/index"
+import Service from "../../components/Service/index"
 
 
 function Home() {
@@ -29,8 +30,11 @@ function Home() {
             <div className='bg-black'>
                 <BandFacts />
             </div>
-            <div>
-                <Reviews />
+            <div className='bg-secondary'>
+                <Reviews  />
+            </div>
+            <div className='bg-secondary'>
+                <Service />
             </div>
         </>
     )

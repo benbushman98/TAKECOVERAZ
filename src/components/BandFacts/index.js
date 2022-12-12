@@ -9,9 +9,7 @@ const bandfacts = () => {
     }
     return (
         <>
-
-
-            <div className="container">
+            <div className="container my-5">
                 <div className="row">
                     <div className="col-12 col-sm-4 d-flex justify-content-center">
                         <div className=' m-4 rounded text-white text-center' style={{ width: "300px", height: "300px" }}>
