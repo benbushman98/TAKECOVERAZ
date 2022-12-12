@@ -6,6 +6,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "@testing-library/jest-dom": "^5.16.5",
@@ -13,10 +16,12 @@
     "@testing-library/user-event": "^13.5.0",
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^5.2.3",
+    "feather-icons": "^4.29.0",
     "gh-deploy": "^0.2.3",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-material-ui-carousel": "^3.4.2",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

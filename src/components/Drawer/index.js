@@ -23,10 +23,13 @@ const style = {
         marginLeft: "auto",
         marginRight: "auto",
         width: "",
-        height: "151px",
+        height: "100px",
     },
     header: {
         height: "250px"
+    },
+    buttons:{
+        
     }
 }
 
@@ -62,7 +65,7 @@ function DrawerAppBar(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }} style={style.header}>
+        <Box className='position-absolute' sx={{ display: 'flex' }} style={style.header}>
             <AppBar component="nav">
                 <Toolbar className="bg-black">
 

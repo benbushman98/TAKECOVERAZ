@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React from 'react';
+import BandFacts from "../../components/BandFacts/index"
+import Reviews from "../../components/Reviews/index"
 
 
 function Home() {
@@ -10,15 +11,26 @@ function Home() {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            position: "relative"
+        },
+        bottom: {
+            position: "absolute",
+            bottom: "5px",
         }
     }
     return (
         <>
-            <div style={style.banner} className="p-5">
-                <div>
-                    <h1>Welcome to the site</h1>
-                    <h5>Sign up for free today</h5>
+            <div style={style.banner} className="p-1">
+                <div style={style.bottom} className='text-white'>
+                    <h3>Playing the best of the 60's, 70's, 80's, 90's & beyond!</h3>
+                    <h5>We will, we will rock you!</h5>
                 </div>
+            </div>
+            <div className='bg-black'>
+                <BandFacts />
+            </div>
+            <div>
+                <Reviews />
             </div>
         </>
     )

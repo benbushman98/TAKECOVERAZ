@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 ]);
 
 const style = {
-  height: "160px"
+  height: "116px"
 }
 
 function App() {
