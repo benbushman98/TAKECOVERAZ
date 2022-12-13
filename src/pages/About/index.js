@@ -11,7 +11,7 @@ function About() {
           <div className="col-12 text-center">
             <div className='p-4 text-center '>
               <h1 className='text-uppercase text-secondary text-decoration-underline'>Band Bio</h1>
-              <img src='/images/theBand.png' alt='the band' className='rounded-pill w-75 my-3'></img>
+              <img src='/images/theBand.PNG' alt='the band' className='rounded-pill w-75 my-3'></img>
               <h3 className='text-secondary text-uppercase'>Take Cover</h3>
               <p className='text-white fs-4'>If you are planning a special event or private party and want a great
                 entertainment option &quot;Take Cover!&quot; is the right choice. As seasoned
