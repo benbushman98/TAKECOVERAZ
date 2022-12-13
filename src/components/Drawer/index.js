@@ -7,12 +7,12 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 const drawerWidth = 200;
 const navItems = ['About', 'Playlist', 'Contact'];
@@ -28,8 +28,8 @@ const style = {
     header: {
         height: "250px"
     },
-    buttons:{
-        
+    buttons: {
+
     }
 }
 
@@ -48,14 +48,10 @@ function DrawerAppBar(props) {
             </Typography>
             <Divider />
             <List className="bg-black text-white">
-                <ListItemButton sx={{ textAlign: 'center' }} href={`/`}>
-                    <ListItemText primary={"Home"} />
-                </ListItemButton>
+                <Link sx={{ textAlign: 'center' }} className='text-white fs-5 text-decoration-none' to={`/`}>{'Home'}</Link>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }} href={`/${item}`}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
+                    <ListItem className='d-flex justify-content-center my-4 fs-5' key={item} disablePadding >
+                        <Link className='text-white text-decoration-none' to={`/${item}`}>{item}</Link>
                     </ListItem>
                 ))}
             </List>
@@ -87,12 +83,12 @@ function DrawerAppBar(props) {
                     </Typography>
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button href={`/`} sx={{ color: '#fff' }}>
-                            {"Home"}
+                        <Button sx={{ color: '#fff' }}>
+                            <Link className='text-white text-decoration-none' to={`/`}>{"Home"}</Link>
                         </Button>
                         {navItems.map((item) => (
-                            <Button href={`/${item}`} key={item} sx={{ color: '#fff' }}>
-                                {item}
+                            <Button key={item} sx={{ color: '#fff' }}>
+                                <Link className='text-white text-decoration-none' to={`/${item}`}>{item}</Link>
                             </Button>
                         ))}
                     </Box>
