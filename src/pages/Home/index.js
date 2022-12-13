@@ -30,10 +30,10 @@ function Home() {
             <div className='bg-black'>
                 <BandFacts />
             </div>
-            <div className='bg-secondary'>
+            <div className='bg-dark'>
                 <Reviews  />
             </div>
-            <div className='bg-secondary'>
+            <div className='bg-dark'>
                 <Service />
             </div>
         </>

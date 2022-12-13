@@ -3,7 +3,7 @@ import BandMembers from '../../components/BandMembers/index.js'
 
 function About() {
   return (
-    <>
+    <div className=''>
       <div className="container mb-5">
         <div className="row">
           <div className="col">
@@ -33,11 +33,11 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="my-5">
+      <div className="mt-5 ">
         <div className="row">
         </div>
         <div className=" text-center">
-          <div className='p-4 text-center  d-flex-wrap justify-content-center'>
+          <div className='p-4 text-center d-flex-wrap justify-content-center'>
             <h1 className='text-uppercase text-white text-decoration-underline'>Member Bio</h1>
             <div className="d-flex flex-wrap justify-content-center">
               <BandMembers />
@@ -46,7 +46,7 @@ function About() {
         </div>
       </div>
 
-    </>
+    </div>
   )
 }
 

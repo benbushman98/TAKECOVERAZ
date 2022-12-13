@@ -42,8 +42,8 @@ function DrawerAppBar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} className="bg-black text-white">
-            <Typography variant="h5" sx={{ my: 2 }} className="bg-black text-white text-uppercase">
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} className="bg-black text-white h-100">
+            <Typography variant="h5" sx={{ my: 2 }} className="bg-black text-white text-uppercase fw-bold">
                 Menu
             </Typography>
             <Divider />

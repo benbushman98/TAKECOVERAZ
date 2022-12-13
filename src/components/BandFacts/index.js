@@ -46,7 +46,7 @@ const bandfacts = () => {
                                     </div>
                                 </div>
                             </div>
-                            <h2 className='display-5 fw-bold'>120</h2>
+                            <h2 className='display-5 fw-bold'>115</h2>
                             <p className='fs-3'>Current Playlist</p>
                         </div>
                     </div>
