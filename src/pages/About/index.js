@@ -10,9 +10,9 @@ function About() {
           </div>
           <div className="col-12 text-center">
             <div className='p-4 text-center '>
-              <h1 className='text-uppercase text-white text-decoration-underline'>Band Bio</h1>
+              <h1 className='text-uppercase text-secondary text-decoration-underline'>Band Bio</h1>
               <img src='/images/theBand.png' alt='the band' className='rounded-pill w-75 my-3'></img>
-              <h3 className='text-white text-uppercase'>Take Cover</h3>
+              <h3 className='text-secondary text-uppercase'>Take Cover</h3>
               <p className='text-white fs-4'>If you are planning a special event or private party and want a great
                 entertainment option &quot;Take Cover!&quot; is the right choice. As seasoned
                 professionals, we have the talent to deliver a fantastic performance that will
@@ -38,7 +38,7 @@ function About() {
         </div>
         <div className=" text-center">
           <div className='p-4 text-center d-flex-wrap justify-content-center'>
-            <h1 className='text-uppercase text-white text-decoration-underline'>Member Bio</h1>
+            <h1 className='text-uppercase text-secondary text-decoration-underline'>Member Bio</h1>
             <div className="d-flex flex-wrap justify-content-center">
               <BandMembers />
             </div>

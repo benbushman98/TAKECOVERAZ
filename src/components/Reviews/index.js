@@ -22,7 +22,7 @@ function Reviews(props) {
             <div className="container-fluid p-0 w-100">
                 <div className="row w-100 m-0">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-6 p-0">
-                    <h1 className='text-secondary text-center mt-5 fw-bold'>Hear Our Clients Thoughts</h1>
+                    <h1 className='text-secondary text-center mt-5 fw-bold text-decoration-underline'>Hear Our Clients Thoughts</h1>
                         <div className='my-4 py-5 d-flex justify-content-center'>
                             <Carousel className='w-75'>
                                 {

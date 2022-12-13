@@ -10,8 +10,8 @@ const Playlist = () => {
           <div className="col">
           </div>
           <div className="col-12 col-sm-6 col-md-6 d-flex text-center pb-4 justify-content-center align-center">
-            <div className='border border-secondary rounded border-5'>
-              <h3 className='w-100 p-1 bg-secondary'>Playlist</h3>
+            <div className=' mt-2 border border-dark rounded border-5'>
+              <h1 className='w-100 p-1 bg-dark text-secondary'>Playlist</h1>
               <div className='px-5' style={{ maxWidth: '500px' }}>
                 <PlaylistCard />
               </div>
