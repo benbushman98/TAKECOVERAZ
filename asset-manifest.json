@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.56cb5c79.css",
-    "main.js": "/static/js/main.10667c28.js",
-    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "static/media/TakeCoverLogo.webp": "/static/media/TakeCoverLogo.63210229ff510c2e863a.webp",
+    "main.css": "/static/css/main.8d6a17ca.css",
+    "main.js": "/static/js/main.1feb99f8.js",
     "index.html": "/index.html",
-    "main.56cb5c79.css.map": "/static/css/main.56cb5c79.css.map",
-    "main.10667c28.js.map": "/static/js/main.10667c28.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+    "main.8d6a17ca.css.map": "/static/css/main.8d6a17ca.css.map",
+    "main.1feb99f8.js.map": "/static/js/main.1feb99f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.56cb5c79.css",
-    "static/js/main.10667c28.js"
+    "static/css/main.8d6a17ca.css",
+    "static/js/main.1feb99f8.js"
   ]
 }
