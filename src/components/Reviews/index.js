@@ -5,8 +5,9 @@ import { Paper } from '@mui/material'
 function Reviews(props) {
     var items = [
         {
-            name: "Random Name #1",
-            review: "Probably the best band you have ever seen! They totally killed it!Probably the best band you have ever seen! They f great songs, super easy to work with and incredible talent. We will keep them around for years to come. Probably the best band you have ever seen! They totally killed it!Probably the best band you have ever seen! They totally killed it! Tons of great songs, super easy to work with and incredible talent."
+            name: "Danny G.",
+            review: '"Take Cover" thats what I did when they started to play. Awesome sound, great vocals, super personalties when they migled with our crowd. We had a corporate holiday party and they made the day. The only problem was they did not know the song "ice castles" \n Seriously, great day and everyone commented on the band.',
+            company: "Tony's Service Center"
         },
         {
             name: "Random Name #2",
@@ -46,8 +47,11 @@ function Item(props) {
     return (
         <Paper >
             <div className='text-center text-white bg-dark'>
-                <h2>{props.item.name}</h2>
+                
                 <p>{props.item.review}</p>
+
+                <h2>{props.item.name}</h2>
+                <p>{props.item.company}</p>
             </div>
         </Paper>
     )
