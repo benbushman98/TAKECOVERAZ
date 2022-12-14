@@ -18,14 +18,15 @@ function Home() {
         bottom: {
             position: "absolute",
             bottom: "5px",
+            width: "99%"
         }
     }
     return (
         <>
             <div style={style.banner} className="p-1">
-                <div style={style.bottom} className='text-white'>
+                <div style={style.bottom} className='text-white text-center m-0'>
                     <h3>Playing the best of the 60's, 70's, 80's, 90's & beyond!</h3>
-                    <h5>We will, we will rock you!</h5>
+                    <h3>We will, we will rock you!</h3>
                 </div>
             </div>
             <div className='bg-black'>

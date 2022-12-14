@@ -62,10 +62,6 @@ function PictureGallery(props) {
         },
         {
             name: "Jay",
-            src: "jay1.jpg"
-        },
-        {
-            name: "Jay",
             src: "jay (4).jpg"
         },
     ]
