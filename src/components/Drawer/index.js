@@ -74,7 +74,7 @@ function DrawerAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <img src="images/take-cover_tiny.webp" sx={{ display: { xs: "none" } }} className="App-logo m-2 mx-1 px-5" alt="logo" style={style.img} />
+                    <img src="images/take-cover_tiny.webp" sx={{ display: { xs: "none" } }} className="App-logo my-2" alt="logo" style={style.img} />
                     <Typography
                         variant="h6"
                         component="div"

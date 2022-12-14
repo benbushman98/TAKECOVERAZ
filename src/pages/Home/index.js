@@ -29,8 +29,11 @@ function Home() {
                     <h3>We will, we will rock you!</h3>
                 </div>
             </div>
-            <div className='bg-black'>
+            <div className='bg-dark'>
                 <BandFacts />
+            </div>
+            <div className='bg-black'>
+                <PictureGallery />
             </div>
             <div className='bg-dark'>
                 <Reviews  />
@@ -38,9 +41,7 @@ function Home() {
             <div className='bg-dark'>
                 <Service />
             </div>
-            <div className='bg-black'>
-                <PictureGallery />
-            </div>
+            
         </>
     )
 }
