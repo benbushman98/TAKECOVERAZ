@@ -2,6 +2,7 @@ import React from 'react';
 import BandFacts from "../../components/BandFacts/index"
 import Reviews from "../../components/Reviews/index"
 import Service from "../../components/Service/index"
+import PictureGallery  from "../../components/PictureGallery/index"
 
 
 function Home() {
@@ -35,6 +36,9 @@ function Home() {
             </div>
             <div className='bg-dark'>
                 <Service />
+            </div>
+            <div className='bg-black'>
+                <PictureGallery />
             </div>
         </>
     )
