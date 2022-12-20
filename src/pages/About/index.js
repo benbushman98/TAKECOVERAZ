@@ -1,5 +1,6 @@
 import React from 'react'
 import BandMembers from '../../components/BandMembers/index.js'
+import Social from '../../components/Social/index'
 
 function About() {
   return (
@@ -46,6 +47,7 @@ function About() {
         </div>
       </div>
 
+      <Social />
     </div>
   )
 }

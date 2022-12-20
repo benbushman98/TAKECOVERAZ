@@ -3,6 +3,7 @@ import BandFacts from "../../components/BandFacts/index"
 import Reviews from "../../components/Reviews/index"
 import Service from "../../components/Service/index"
 import PictureGallery  from "../../components/PictureGallery/index"
+import Social from '../../components/Social/index'
 
 
 function Home() {
@@ -41,7 +42,7 @@ function Home() {
             <div className='bg-dark'>
                 <Service />
             </div>
-            
+            <Social />
         </>
     )
 }

@@ -13,7 +13,7 @@ const Service = () => {
                 <div className="col-12 col-sm-12 col-md-12 col-lg-6 col order-lg-1 col order-md-12 col order-sm-12 col order-12 p-0 ">
                 <h1 className='text-secondary text-center mt-5 fw-bold'>Service Area</h1>
                     <div className='text-white text-center fs-2 p-5 mx-3'>                     
-                        <p>Just because we are Arizona's greatest rock cover band doesn't mean AZ is the only place that gets us. <Link className='text-danger' to='/contact'>Contact us</Link> to see if we can work out a deal to play at your event, wherever you are!</p>
+                        <p>Just because we are Arizona's greatest rock cover band doesn't mean AZ is the only place that gets us. <Link className='text-danger' to='/contact'>Contact us</Link> and we'll talk!</p>
                     </div>
                 </div>
             </div>

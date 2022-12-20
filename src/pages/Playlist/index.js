@@ -1,5 +1,6 @@
 import React from 'react'
 import PlaylistCard from "../../components/Playlist Card/index"
+import Social from '../../components/Social/index'
 
 const Playlist = () => {
   return (
@@ -21,7 +22,7 @@ const Playlist = () => {
           </div>
         </div>
       </div>
-
+      <Social />
     </>
   )
 }
