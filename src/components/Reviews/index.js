@@ -11,8 +11,8 @@ function Reviews(props) {
         },
         {
             name: "Patti D.",
-            review: 'I have had the pleasure of seeing Take Cover perform at various venues during the past few years and they never disappoint. So when the need came up to hire entertainment for a reunion event, I immediately thought of them. It was easy to coordinate with them, affordable, and everyone had a good time. They had amazing energy and engaged the group throughout!',
-            company: "Family Reunion"
+            review: 'I have had the pleasure of seeing "Take Cover" perform at various venues during the past few years and they never disappoint. So when the need came up to hire entertainment for a reunion event, I immediately thought of them. It was easy to coordinate with them, affordable, and everyone had a good time. They had amazing energy and engaged the group throughout!',
+            company: "Reunion"
         },
     ]
 
