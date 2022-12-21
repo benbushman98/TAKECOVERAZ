@@ -9,6 +9,11 @@ function Reviews(props) {
             review: '"Take Cover" thats what I did when they started to play. Awesome sound, great vocals, super personalties when they migled with our crowd. We had a corporate holiday party and they made the day. The only problem was they did not know the song "ice castles" \n Seriously, great day and everyone commented on the band.',
             company: "Tony's Service Center"
         },
+        {
+            name: "Patti D.",
+            review: 'I have had the pleasure of seeing Take Cover perform at various venues during the past few years and they never disappoint. So when the need came up to hire entertainment for a reunion event, I immediately thought of them. It was easy to coordinate with them, affordable, and everyone had a good time. They had amazing energy and engaged the group throughout!',
+            company: "Family Reunion"
+        },
     ]
 
     return (
