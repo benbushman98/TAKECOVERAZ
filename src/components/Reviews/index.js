@@ -14,6 +14,16 @@ function Reviews(props) {
             review: 'I have had the pleasure of seeing "Take Cover" perform at various venues during the past few years and they never disappoint. So when the need came up to hire entertainment for a reunion event, I immediately thought of them. It was easy to coordinate with them, affordable, and everyone had a good time. They had amazing energy and engaged the group throughout!',
             company: "Reunion"
         },
+        {
+            name: "Diana D.",
+            review: 'What a great addition to our annual Training & Expo held at Wild Horse Pass. Holding the expo in the WHP showroom gave us an actual stage for Take Cover! to be the focus of our entertainment. \n We had a number of compliments on the added music and even more that it was a local live band that knew everything from the 60s to current. Thank you again for joining us and we look forward to having you back again.',
+            company: "SouthWest Automotive Professionals"
+        },
+        {
+            name: "David M. ",
+            review: 'Our 50th anniversary party was kicked up a notch with Take Cover! entertaining everyone for 3 hours. The guys had our customers singing, dancing and having a blast. We are a local family owned business and being able to support other local small businesses was a bonus on top of having great music at our party. These guys know it all and they take requests. Thanks again for a great time!',
+            company: "Martin's Auto Repair"
+        },
     ]
 
     return (
