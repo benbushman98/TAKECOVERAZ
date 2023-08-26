@@ -573,5 +573,25 @@
         "id": 115,
         "artist": "Bruno Mars",
         "song": "Uptown Funk"
+    },
+    {
+        "id": 116,
+        "artist": "Pink Floyd",
+        "song": "Another Brick in the Wall"
+    },
+    {
+        "id": 117,
+        "artist": "Red Hot Chili Peppers",
+        "song": "Can't Stop"
+    },
+    {
+        "id": 118,
+        "artist": "Tom Petty",
+        "song": "Running down a dream"
+    },
+    {
+        "id": 119,
+        "artist": "Doobie Brothers",
+        "song": "Listen to the Music"
     }
 ]

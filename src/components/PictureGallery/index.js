@@ -6,18 +6,6 @@ function PictureGallery(props) {
     var items = [
         {
             name: "Chad",
-            src: "chad.jpg"
-        },
-        {
-            name: "Chad",
-            src: "chad1.jpg"
-        },
-        {
-            name: "Jay",
-            src: "jay (2).jpg"
-        },
-        {
-            name: "Chad",
             src: "chad (2).jpg"
         },
         {
@@ -38,15 +26,7 @@ function PictureGallery(props) {
         },
         {
             name: "Chad",
-            src: "chad (7).jpg"
-        },
-        {
-            name: "Chad",
             src: "chad (8).jpg"
-        },
-        {
-            name: "Jay",
-            src: "jay (3).jpg"
         },
         {
             name: "Chad",
@@ -61,9 +41,13 @@ function PictureGallery(props) {
             src: "jay.jpg"
         },
         {
-            name: "Jay",
-            src: "jay (4).jpg"
+            name:"Jay",
+            src: "takecover_drum.jpg"
         },
+        {
+            name: "Group",
+            src: "takecover_group.jpg"
+        }
     ]
 
     return (
