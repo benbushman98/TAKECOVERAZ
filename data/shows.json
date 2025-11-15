@@ -1,2 +1,50 @@
 [
+    {
+        "id": 1,
+        "date": "2025-12-06",
+        "day": "Saturday",
+        "timeStart": "8:30 PM",
+        "timeEnd": "12:00 AM",
+        "title": "Murphy’s Law",
+        "city": "Chandler, AZ",
+        "address": "58 S San Marcos Pl, Chandler, AZ 85225",
+        "link": null,
+        "notes": null
+    },
+    {
+        "id": 2,
+        "date": "2025-12-13",
+        "day": "Saturday",
+        "timeStart": "3:00 PM",
+        "timeEnd": "7:00 PM",
+        "title": "The Monastery",
+        "city": "Mesa, AZ",
+        "address": "4810 E McKellips Rd, Mesa, AZ 85215",
+        "link": null,
+        "notes": null
+    },
+    {
+        "id": 3,
+        "date": "2026-01-02",
+        "day": "Friday",
+        "timeStart": "6:00 PM",
+        "timeEnd": "9:00 PM",
+        "title": "Herberger Theatre",
+        "city": "Phoenix, AZ",
+        "address": "222 E Monroe St, Phoenix, AZ 85004",
+        "link": null,
+        "notes": null
+    },
+    {
+        "id": 4,
+        "date": "2026-01-23",
+        "day": "Friday",
+        "timeStart": "7:00 PM",
+        "timeEnd": "10:00 PM",
+        "title": "Sunrise RV Resort",
+        "city": "Apache Junction, AZ",
+        "address": "1403 W Broadway Ave, Apache Junction, AZ 85120",
+        "link": null,
+        "notes": null
+    }
 ]
