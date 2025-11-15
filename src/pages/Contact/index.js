@@ -4,8 +4,8 @@ import Social from '../../components/Social/index'
 function Contact() {
     return (
         <>
-            <h1 className='p-5 m-0 text-center text-secondary text-decoration-underline'>Contact Us</h1>
-            <div className="container">
+            <div className="container pt-5">
+            <h1 className='p-5 m-0 text-center text-secondary text-decoration-underline mt-5 pt-5'>Contact Us</h1>
                 <div className="row">
                     <div className="col">
                     </div>

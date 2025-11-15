@@ -12,10 +12,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // <-- import useLocation
 
 const drawerWidth = 200;
-const navItems = ['About', 'Playlist', 'Contact'];
+const navItems = ['About', 'Calendar', 'Playlist', 'Contact'];
 
 const style = {
     img: {
@@ -36,9 +36,15 @@ const style = {
 function DrawerAppBar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const location = useLocation(); // <-- get current location
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
+    };
+
+    const isActive = (item) => {
+        if (item === 'Home' && location.pathname === '/') return true;
+        return location.pathname.toLowerCase() === `/${item.toLowerCase()}`;
     };
 
     const drawer = (
@@ -48,10 +54,22 @@ function DrawerAppBar(props) {
             </Typography>
             <Divider />
             <List className="bg-black text-white">
-                <Link sx={{ textAlign: 'center' }} className='text-white fs-5 text-decoration-none' to={`/`}>{'Home'}</Link>
+                <ListItem className='d-flex justify-content-center my-4 fs-5' disablePadding>
+                    <Link
+                        className={`text-decoration-none ${location.pathname === '/' ? 'text-danger' : 'text-white'}`}
+                        to={`/`}
+                    >
+                        Home
+                    </Link>
+                </ListItem>
                 {navItems.map((item) => (
                     <ListItem className='d-flex justify-content-center my-4 fs-5' key={item} disablePadding >
-                        <Link className='text-white text-decoration-none' to={`/${item}`}>{item}</Link>
+                        <Link
+                            className={`text-decoration-none ${isActive(item) ? 'text-danger' : 'text-white'}`}
+                            to={`/${item}`}
+                        >
+                            {item}
+                        </Link>
                     </ListItem>
                 ))}
             </List>
@@ -83,12 +101,22 @@ function DrawerAppBar(props) {
                     </Typography>
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button sx={{ color: '#fff' }}>
-                            <Link className='text-white text-decoration-none' to={`/`}>{"Home"}</Link>
+                        <Button sx={{ color: 'inherit' }}>
+                            <Link
+                                className={`text-decoration-none ${location.pathname === '/' ? 'text-danger' : 'text-white'}`}
+                                to={`/`}
+                            >
+                                Home
+                            </Link>
                         </Button>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                <Link className='text-white text-decoration-none' to={`/${item}`}>{item}</Link>
+                            <Button key={item} sx={{ color: 'inherit' }}>
+                                <Link
+                                    className={`text-decoration-none ${isActive(item) ? 'text-danger' : 'text-white'}`}
+                                    to={`/${item}`}
+                                >
+                                    {item}
+                                </Link>
                             </Button>
                         ))}
                     </Box>
@@ -117,10 +145,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
 };
 
