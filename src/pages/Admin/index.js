@@ -39,18 +39,26 @@ export default function AdminDashboard() {
   };
 
   const addShow = () => {
-    const newShow = {
-      id: Date.now(),
-      date: "",
-      day: "",
-      timeStart: "",
-      timeEnd: "",
-      title: "",
-      address: "",
-      link: "",
-      notes: "",
-    };
-    setShows([...shows, newShow]);
+    // find the highest existing ID
+    const maxId = shows.length > 0 ? Math.max(...shows.map((s) => s.id)) : 0;
+
+    // next id is max + 1
+    const nextId = maxId + 1;
+
+    setShows([
+      ...shows,
+      {
+        id: nextId,
+        date: "",
+        day: "",
+        timeStart: "",
+        timeEnd: "",
+        title: "",
+        address: "",
+        link: "",
+        notes: "",
+      },
+    ]);
   };
 
   const deleteShow = (id) => {
