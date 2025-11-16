@@ -46,16 +46,5 @@
     "address": "1403 W Broadway Ave. Apache Junction, AZ 85120",
     "link": null,
     "notes": null
-  },
-  {
-    "id": 5,
-    "date": "2025-11-22",
-    "day": "Saturday",
-    "timeStart": "10:00 PM",
-    "timeEnd": "12:00 AM",
-    "title": "Roadhouse",
-    "address": "3743 East Decatur St. Mesa, AZ 85205",
-    "link": "",
-    "notes": ""
   }
 ]
