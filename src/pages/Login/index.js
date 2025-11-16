@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin({ onLogin }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     const res = await fetch("https://takecoveraz.benbushman98.workers.dev/login", {
@@ -24,7 +26,7 @@ export default function AdminLogin({ onLogin }) {
     if (onLogin) onLogin();
 
     // redirect to admin
-    window.location.href = "#/admin";
+    navigate("/admin");
   };
 
   return (
