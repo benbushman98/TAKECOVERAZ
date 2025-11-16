@@ -1,5 +1,5 @@
 import DrawerAppBar from "./components/Drawer";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import ErrorPage from "./pages/Error/index";
 import Home from "./pages/Home/index";
 import About from "./pages/About/index";
@@ -13,7 +13,7 @@ import Footer from "./components/Footer/index";
 function App() {
   const isLoggedIn = !!localStorage.getItem("session");
   return (
-    <BrowserRouter>
+    <HashRouter>
       {/* Full-height flex container */}
       <div className="d-flex flex-column min-vh-100 bg-black">
         {/* Header */}
@@ -50,10 +50,7 @@ function App() {
               element={<Login />}
               errorElement={<ErrorPage />}
             />
-            <Route
-              path="/admin"
-              element={isLoggedIn ? <Admin /> : <Login />}
-            />
+            <Route path="/admin" element={isLoggedIn ? <Admin /> : <Login />} />
           </Routes>
         </div>
 
@@ -62,7 +59,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
