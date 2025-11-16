@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import Social from '../../components/Social/index'
+import Social from "../../components/Social/index";
 
 export default function PublicCalendar() {
   const [shows, setShows] = useState([]);
 
   useEffect(() => {
-    fetch("/data/shows.json")
+    fetch(
+      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json"
+    )
       .then((res) => res.json())
       .then((data) => {
         const today = new Date();
