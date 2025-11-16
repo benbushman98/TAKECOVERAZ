@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=./index.html" />
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=./index.html">
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting…</p>
+    <script>
+      // Preserve the path & query when redirecting to index.html
+      (function () {
+        var l = window.location;
+        var newUrl = l.origin + l.pathname.replace(/\/[^\/]*$/, "/") + "index.html" + l.search + l.hash;
+        window.location.replace(newUrl);
+      })();
+    </script>
+  </body>
 </html>
