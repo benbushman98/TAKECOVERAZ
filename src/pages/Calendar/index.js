@@ -6,7 +6,7 @@ export default function PublicCalendar() {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/benbushman98/takecoveraz-data/main/shows.json"
+      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json"
     )
       .then((res) => res.json())
       .then((data) => {
