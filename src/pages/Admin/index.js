@@ -19,7 +19,9 @@ export default function AdminDashboard() {
 
   // LOAD SHOWS
   useEffect(() => {
-    fetch("/data/shows.json")
+    fetch(
+      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json"
+    )
       .then((res) => res.json())
       .then((data) => setShows(data));
   }, []);
