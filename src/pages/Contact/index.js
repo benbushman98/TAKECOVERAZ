@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import Social from "../../components/Social/index";
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-function ContactForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+function Contact() {
+  const recaptchaRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => setForm({ ...form, [e.target.id]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!executeRecaptcha) {
-      setStatus("reCAPTCHA not ready. Please try again.");
+    const recaptchaToken = recaptchaRef.current.getValue();
+    if (!recaptchaToken) {
+      setStatus("Please complete the reCAPTCHA.");
       return;
     }
 
     setStatus("Sending...");
-    const recaptchaToken = await executeRecaptcha("contact_form");
 
     emailjs
       .send(
@@ -38,6 +38,7 @@ function ContactForm() {
       .then(() => {
         setStatus("Message sent successfully! Thank you for reaching out!");
         setForm({ name: "", email: "", subject: "", message: "" });
+        recaptchaRef.current.reset();
       })
       .catch(() => setStatus("Something went wrong. Please try again."));
   };
@@ -64,6 +65,12 @@ function ContactForm() {
               <div className="form-group m-3">
                 <textarea className="form-control" id="message" placeholder="Message" value={form.message} rows="4" onChange={handleChange} required />
               </div>
+              <div className="d-flex justify-content-center m-3">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LfSMJwsAAAAADqCS4xO-5qTTaHhJ56Id_9eZNRp"
+                />
+              </div>
               <button type="submit" className="btn btn-primary mb-2">Submit</button>
               {status && <p className="mt-2 text-white">{status}</p>}
             </form>
@@ -84,15 +91,6 @@ function ContactForm() {
       </div>
       <Social />
     </>
-  );
-}
-
-// Outer component wraps the inner one in the provider
-function Contact() {
-  return (
-    <GoogleReCaptchaProvider reCaptchaKey="6LfGMJwsAAAAAHXwsDLKFaX1DpNxCptM1ig3rhcX">
-      <ContactForm />
-    </GoogleReCaptchaProvider>
   );
 }
 
