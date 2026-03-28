@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Social from "../../components/Social/index";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -10,6 +12,7 @@ function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -17,6 +20,12 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("Sending...");
+
+    const recaptchaToken = recaptchaRef.current.getValue();
+    if (!recaptchaToken) {
+      setStatus("Please complete the reCAPTCHA.");
+      return;
+    }
 
     emailjs
       .send(
@@ -28,12 +37,16 @@ function Contact() {
           subject: form.subject,
           message: form.message,
           time: new Date().toLocaleString(), // auto-generated
+          "g-recaptcha-response": recaptchaToken,
         },
         "Je1lX0MpHjZ51x-nR", // from EmailJS dashboard
       )
       .then(() => {
-        setStatus("Message sent successfully! Thank you for reaching out. We will contact you soon!");
+        setStatus(
+          "Message sent successfully! Thank you for reaching out. We will contact you soon!",
+        );
         setForm({ name: "", email: "", subject: "", message: "" }); // reset form
+        recaptchaRef.current.reset(); // clear the recaptcha
       })
       .catch(() => setStatus("Something went wrong. Please try again."));
   };
@@ -93,6 +106,12 @@ function Contact() {
                   rows="4"
                   onChange={handleChange}
                   required
+                />
+              </div>
+              <div className="d-flex justify-content-center m-3">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="YOUR_RECAPTCHA_SITE_KEY"
                 />
               </div>
               <button type="submit" className="btn btn-primary mb-2">
