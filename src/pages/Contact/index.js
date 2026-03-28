@@ -111,7 +111,7 @@ function Contact() {
               <div className="d-flex justify-content-center m-3">
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                  sitekey="6LfGMJwsAAAAAHXwsDLKFaX1DpNxCptM1ig3rhcX"
                 />
               </div>
               <button type="submit" className="btn btn-primary mb-2">
