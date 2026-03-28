@@ -39,7 +39,7 @@ function About() {
         </div>
         <div className=" text-center">
           <div className='p-4 text-center d-flex-wrap justify-content-center'>
-            <h1 className='text-uppercase text-secondary text-decoration-underline'>Member Bio</h1>
+            <h1 className='text-uppercase text-secondary text-decoration-underline'>Members</h1>
             <div className="d-flex flex-wrap justify-content-center">
               <BandMembers />
             </div>
