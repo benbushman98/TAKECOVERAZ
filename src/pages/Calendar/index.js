@@ -6,7 +6,7 @@ export default function PublicCalendar() {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json"
+      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json",
     )
       .then((res) => res.json())
       .then((data) => {
@@ -17,6 +17,7 @@ export default function PublicCalendar() {
           .filter((show) => new Date(show.date) >= today)
           .sort((a, b) => new Date(a.date) - new Date(b.date));
 
+        console.log(upcoming);
         setShows(upcoming);
       });
   }, []);
@@ -24,7 +25,7 @@ export default function PublicCalendar() {
   // Make address link open in Google Maps
   const getMapsLink = (address) => {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      address
+      address,
     )}`;
   };
 
@@ -49,7 +50,9 @@ export default function PublicCalendar() {
               <tr key={show.id}>
                 <td className="fw-bold">
                   <div>{show.day}</div>
-                  <div>{new Date(show.date).toLocaleDateString()}</div>
+                  <div>
+                    {new Date(show.date + "T00:00:00").toLocaleDateString()}
+                  </div>
                 </td>
 
                 <td>

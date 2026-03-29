@@ -3,18 +3,16 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 
 const ITEMS = [
-  { name: "Chad", src: "chad (2).jpg" },
+  { name: "Chad", src: "Chad 3.jpeg" },
   { name: "Jay", src: "jay.jpg" },
-  { name: "Chad", src: "chad (5).jpg" },
-  { name: "Chad", src: "chad (3).jpg" },
+  { name: "Chad", src: "Chad 4.jpeg" },
+  { name: "Chad", src: "Chad 5.jpeg" },
   { name: "Rob", src: "rob_alvarez_2.jpeg" },
-  { name: "Chad", src: "chad (9).jpg" },
+  { name: "Chad", src: "Chad 6.jpeg" },
   { name: "Rob", src: "rob_alvarez_1.jpeg" },
-  { name: "Chad", src: "chad (4).jpg" },
   { name: "Jay", src: "jay_1.jpeg" },
+  { name: "Chad", src: "Chad rockin.jpeg" },
   { name: "Jay", src: "takecover_drum.jpg" },
-  { name: "Chad", src: "chad (8).jpg" },
-  { name: "Chad", src: "chad (10).jpg" },
   { name: "Group", src: "takecover_group.jpg" },
 ];
 
