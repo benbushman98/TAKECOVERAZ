@@ -109,7 +109,7 @@ export default function PublicCalendar() {
 
               <p className="card-text mb-1">
                 <strong>Date:</strong>{" "}
-                {new Date(show.date).toLocaleDateString()}
+                {new Date(show.date + "T00:00:00").toLocaleDateString()}
               </p>
 
               <p className="card-text mb-1">
