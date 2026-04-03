@@ -81,9 +81,10 @@ function PictureGallery() {
         See the Band in Action
       </h1>
       <div className="row align-items-center g-4">
-        {/* Left video */}
-        <div className="col-12 col-lg-4">
+        {/* Left videos */}
+        <div className="col-12 col-lg-4 d-flex flex-column gap-3">
           <VideoPanel src={VIDEO_URLS[0]} />
+          <VideoPanel src={VIDEO_URLS[2]} />
         </div>
 
         {/* Center carousel */}
@@ -101,9 +102,10 @@ function PictureGallery() {
           </Carousel>
         </div>
 
-        {/* Right video */}
-        <div className="col-12 col-lg-4">
+        {/* Right videos */}
+        <div className="col-12 col-lg-4 d-flex flex-column gap-3">
           <VideoPanel src={VIDEO_URLS[1]} />
+          <VideoPanel src={VIDEO_URLS[3]} />
         </div>
       </div>
     </div>
