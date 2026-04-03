@@ -17,8 +17,10 @@ const ITEMS = [
 ];
 
 const VIDEO_URLS = [
-  "https://www.youtube.com/embed/Jg4ZwElXiNE",
-  "https://www.youtube.com/embed/2ScZkF8BBgM",
+  "https://www.youtube.com/embed/wKPn5tYczjY",
+  "https://www.youtube.com/embed/uPLO5Rw1h5c",
+  "https://www.youtube.com/embed/Bu3uq56zWpk",
+  "https://www.youtube.com/embed/Q5SBVhpT4ls",
 ];
 
 function VideoPanel({ src }) {
