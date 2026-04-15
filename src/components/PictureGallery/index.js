@@ -3,7 +3,6 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 
 const ITEMS = [
-  { name: "Jay", src: "jay_2.webp" },
   { name: "Chad", src: "Chad 3.jpeg" },
   { name: "Jay", src: "jay.jpg" },
   { name: "Chad", src: "Chad 4.jpeg" },
@@ -11,10 +10,11 @@ const ITEMS = [
   { name: "Chad", src: "Chad 5.jpeg" },
   { name: "Jay", src: "jay_3.webp" },
   { name: "Chad", src: "Chad 6.jpeg" },
-  { name: "Rob", src: "rob_alvarez_1.jpeg" },
   { name: "Jay", src: "jay_1.jpeg" },
-  { name: "Chad", src: "Chad rockin.jpeg" },
+  { name: "Rob", src: "rob_alvarez_1.jpeg" },
   { name: "Jay", src: "takecover_drum.jpg" },
+  { name: "Chad", src: "Chad rockin.jpeg" },
+  { name: "Jay", src: "jay_2.webp" },
   { name: "Group", src: "takecover_group.jpg" },
 ];
 
