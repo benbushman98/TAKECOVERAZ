@@ -106,5 +106,38 @@
     "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
     "link": "",
     "notes": null
+  },
+  {
+    "id": 10,
+    "date": "2026-07-31",
+    "day": "Fri",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
+  },
+  {
+    "id": 11,
+    "date": "2026-08-28",
+    "day": "Fri",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
+  },
+  {
+    "id": 12,
+    "date": "2026-09-18",
+    "day": "Fri",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
   }
 ]
