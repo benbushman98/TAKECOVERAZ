@@ -20,10 +20,10 @@ const ITEMS = [
 
 
 const VIDEO_URLS = [
-  "https://www.youtube.com/embed/wKPn5tYczjY",
+  "https://www.youtube.com/embed/Q5SBVhpT4ls",
   "https://www.youtube.com/embed/uPLO5Rw1h5c",
   "https://www.youtube.com/embed/Bu3uq56zWpk",
-  "https://www.youtube.com/embed/Q5SBVhpT4ls",
+  "https://www.youtube.com/embed/wKPn5tYczjY",
 ];
 
 function VideoPanel({ src }) {
