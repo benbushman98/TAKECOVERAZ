@@ -12,7 +12,7 @@ function About() {
         <Box sx={{ textAlign: 'center', py: 3 }}>
           <Box
             component="img"
-            src="/images/theBand.jpeg"
+            src="/images/theBand.webp"
             alt="the band"
             sx={{ borderRadius: 1, my: 2, mx: 'auto', display: 'block', maxHeight: '400px', width: { xs: '100%', sm: '75%' } }}
           />

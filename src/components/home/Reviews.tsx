@@ -69,7 +69,7 @@ function Reviews() {
         <Box sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}>
           <Box
             component="img"
-            src="/images/theBand.jpeg"
+            src="/images/theBand.webp"
             alt="Take Cover Band"
             sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
