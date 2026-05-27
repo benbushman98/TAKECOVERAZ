@@ -108,64 +108,9 @@
     "notes": null
   },
   {
-    "id": 10,
-    "date": "2026-07-31",
-    "day": "Fri",
-    "timeStart": "6:00 PM",
-    "timeEnd": "9:00 PM",
-    "title": "What’s Crackin Cafe",
-    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
-    "link": "http://www.whatscrackincafe.com/",
-    "notes": ""
-  },
-  {
-    "id": 11,
-    "date": "2026-08-28",
-    "day": "Fri",
-    "timeStart": "6:00 PM",
-    "timeEnd": "9:00 PM",
-    "title": "What’s Crackin Cafe",
-    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
-    "link": "http://www.whatscrackincafe.com/",
-    "notes": ""
-  },
-  {
-    "id": 12,
-    "date": "2026-09-18",
-    "day": "Fri",
-    "timeStart": "6:00 PM",
-    "timeEnd": "9:00 PM",
-    "title": "What’s Crackin Cafe",
-    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
-    "link": "http://www.whatscrackincafe.com/",
-    "notes": ""
-  },
-  {
-    "id": 13,
-    "date": "2026-09-19",
-    "day": "Sat",
-    "timeStart": "8:30 PM",
-    "timeEnd": "11:30 PM",
-    "title": "Va Bene",
-    "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
-    "link": "https://vabeneaz.com/",
-    "notes": ""
-  },
-  {
-    "id": 14,
-    "date": "2026-10-17",
-    "day": "Sat",
-    "timeStart": "8:30 PM",
-    "timeEnd": "11:30 PM",
-    "title": "Va Bene",
-    "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
-    "link": "https://vabeneaz.com/",
-    "notes": ""
-  },
-  {
     "id": 15,
     "date": "2026-07-17",
-    "day": "Fri",
+    "day": "Friday",
     "timeStart": "8:30 PM",
     "timeEnd": "11:30 PM",
     "title": "Apache County Fair Grounds",
@@ -176,12 +121,67 @@
   {
     "id": 16,
     "date": "2026-07-18",
-    "day": "Sat",
+    "day": "Saturday",
     "timeStart": "8:30 PM",
     "timeEnd": "11:30 PM",
     "title": "Apache County Fair Grounds",
     "address": "825 4th N, St Johns, AZ 85936",
     "link": "",
     "notes": "St. Johns AZ Pioneer Days Festival"
+  },
+  {
+    "id": 10,
+    "date": "2026-07-31",
+    "day": "Friday",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
+  },
+  {
+    "id": 11,
+    "date": "2026-08-28",
+    "day": "Friday",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
+  },
+  {
+    "id": 12,
+    "date": "2026-09-18",
+    "day": "Friday",
+    "timeStart": "6:00 PM",
+    "timeEnd": "9:00 PM",
+    "title": "What’s Crackin Cafe",
+    "address": "6663 E. McDowell Rd Mesa, AZ 85215",
+    "link": "http://www.whatscrackincafe.com/",
+    "notes": ""
+  },
+  {
+    "id": 13,
+    "date": "2026-09-19",
+    "day": "Saturday",
+    "timeStart": "8:30 PM",
+    "timeEnd": "11:30 PM",
+    "title": "Va Bene",
+    "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
+    "link": "https://vabeneaz.com/",
+    "notes": ""
+  },
+  {
+    "id": 14,
+    "date": "2026-10-17",
+    "day": "Saturday",
+    "timeStart": "8:30 PM",
+    "timeEnd": "11:30 PM",
+    "title": "Va Bene",
+    "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
+    "link": "https://vabeneaz.com/",
+    "notes": ""
   }
 ]
