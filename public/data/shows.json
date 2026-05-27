@@ -161,5 +161,27 @@
     "address": "4647 E Chandler Blvd, Phoenix, AZ 85048",
     "link": "https://vabeneaz.com/",
     "notes": ""
+  },
+  {
+    "id": 15,
+    "date": "2026-07-17",
+    "day": "Fri",
+    "timeStart": "8:30 PM",
+    "timeEnd": "11:30 PM",
+    "title": "Apache County Fair Grounds",
+    "address": "825 4th N, St Johns, AZ 85936",
+    "link": "",
+    "notes": "St. Johns AZ Pioneer Days Festival"
+  },
+  {
+    "id": 16,
+    "date": "2026-07-18",
+    "day": "Sat",
+    "timeStart": "8:30 PM",
+    "timeEnd": "11:30 PM",
+    "title": "Apache County Fair Grounds",
+    "address": "825 4th N, St Johns, AZ 85936",
+    "link": "",
+    "notes": "St. Johns AZ Pioneer Days Festival"
   }
 ]
