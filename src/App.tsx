@@ -10,7 +10,7 @@ import Calendar from './pages/Calendar';
 import Playlist from './pages/Playlist';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
-import Admin from './pages/Admin';
+import Admin from './pages/admin/Admin';
 import ErrorPage from './pages/Error';
 
 const darkTheme = createTheme({

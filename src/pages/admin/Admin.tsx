@@ -4,11 +4,6 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
-import TextField from "@mui/material/TextField";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
@@ -18,15 +13,11 @@ import TableContainer from "@mui/material/TableContainer";
 import Paper from "@mui/material/Paper";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import CircularProgress from "@mui/material/CircularProgress";
 import Chip from "@mui/material/Chip";
-import type { Show } from "../types/show";
-
-const WORKER_URL = "https://takecoveraz.benbushman98.workers.dev";
-
-const inputSx = {
-  '& .MuiInputBase-input[type="date"]': { colorScheme: "dark" },
-};
+import type { Show } from "../../types/show";
+import DeleteConfirmDialog from "./DeleteConfirmDialog";
+import EventDialog from "./EventDialog";
+import { normalizeDay, WORKER_URL } from "./adminUtils";
 
 function Admin() {
   const [shows, setShows] = useState<Show[]>([]);
@@ -65,7 +56,8 @@ function Admin() {
     setToast({ message, severity });
   };
 
-  const openEdit = (show: Show) => setEditingShow({ ...show });
+  const openEdit = (show: Show) =>
+    setEditingShow({ ...show, day: normalizeDay(show.day) });
   const closeEdit = () => setEditingShow(null);
 
   const updateField = (field: keyof Show, value: string) => {
@@ -112,10 +104,14 @@ function Admin() {
   const saveEdit = async () => {
     if (!editingShow || loading) return;
 
+    const showToSave = {
+      ...editingShow,
+      day: normalizeDay(editingShow.day),
+    };
     const isExistingShow = shows.some((s) => s.id === editingShow.id);
     const nextShows = isExistingShow
-      ? shows.map((s) => (s.id === editingShow.id ? editingShow : s))
-      : [...shows, editingShow];
+      ? shows.map((s) => (s.id === showToSave.id ? showToSave : s))
+      : [...shows, showToSave];
     const saved = await persistShows(
       nextShows,
       isExistingShow
@@ -491,173 +487,24 @@ function Admin() {
         </Box>
       </Container>
 
-      {/* Edit Dialog */}
-      <Dialog
+      <EventDialog
         open={!!editingShow}
-        onClose={() => {
-          if (!loading) closeEdit();
-        }}
-        maxWidth="sm"
-        fullWidth
-        PaperProps={{ sx: { background: "#111", border: "1px solid #2a2a2a" } }}
-      >
-        <DialogTitle
-          sx={{
-            color: "white",
-            fontWeight: "bold",
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-            borderBottom: "2px solid #dc3545",
-          }}
-        >
-          {editingShow && shows.some((s) => s.id === editingShow.id)
-            ? "Edit Show"
-            : "Add Show"}
-        </DialogTitle>
-        <DialogContent sx={{ pt: 3 }}>
-          {editingShow && (
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 1.5,
-                mt: 1,
-              }}
-            >
-              <TextField
-                label="Date"
-                type="date"
-                size="small"
-                fullWidth
-                value={editingShow.date}
-                onChange={(e) => updateField("date", e.target.value)}
-                InputLabelProps={{ shrink: true }}
-                sx={inputSx}
-              />
-              <TextField
-                label="Day"
-                placeholder="e.g. Sat"
-                size="small"
-                fullWidth
-                value={editingShow.day}
-                onChange={(e) => updateField("day", e.target.value)}
-              />
-              <TextField
-                label="Start"
-                placeholder="8:00 PM"
-                size="small"
-                fullWidth
-                value={editingShow.timeStart}
-                onChange={(e) => updateField("timeStart", e.target.value)}
-              />
-              <TextField
-                label="End"
-                placeholder="11:00 PM"
-                size="small"
-                fullWidth
-                value={editingShow.timeEnd}
-                onChange={(e) => updateField("timeEnd", e.target.value)}
-              />
-              <TextField
-                label="Venue Name"
-                placeholder="e.g. Handlebar J's"
-                size="small"
-                fullWidth
-                sx={{ gridColumn: "span 2" }}
-                value={editingShow.title}
-                onChange={(e) => updateField("title", e.target.value)}
-              />
-              <TextField
-                label="Address"
-                placeholder="123 Main St, Scottsdale, AZ"
-                size="small"
-                fullWidth
-                sx={{ gridColumn: "span 2" }}
-                value={editingShow.address}
-                onChange={(e) => updateField("address", e.target.value)}
-              />
-              <TextField
-                label="Link"
-                placeholder="https://..."
-                size="small"
-                fullWidth
-                sx={{ gridColumn: "span 2" }}
-                value={editingShow.link}
-                onChange={(e) => updateField("link", e.target.value)}
-              />
-              <TextField
-                label="Notes"
-                placeholder="Any additional info..."
-                size="small"
-                fullWidth
-                sx={{ gridColumn: "span 2" }}
-                value={editingShow.notes}
-                onChange={(e) => updateField("notes", e.target.value)}
-              />
-            </Box>
-          )}
-        </DialogContent>
-        <DialogActions sx={{ borderTop: "1px solid #1e1e1e", px: 3, py: 2 }}>
-          <Button onClick={closeEdit} color="inherit" disabled={loading}>
-            Cancel
-          </Button>
-          <Button
-            onClick={saveEdit}
-            variant="contained"
-            color="primary"
-            disabled={loading}
-            sx={{ fontWeight: "bold", minWidth: "112px" }}
-            startIcon={
-              loading ? (
-                <CircularProgress size={16} color="inherit" />
-              ) : undefined
-            }
-          >
-            {loading ? "Saving..." : "Save Show"}
-          </Button>
-        </DialogActions>
-      </Dialog>
+        show={editingShow}
+        loading={loading}
+        isExistingShow={
+          !!editingShow && shows.some((s) => s.id === editingShow.id)
+        }
+        onClose={closeEdit}
+        onSave={saveEdit}
+        onUpdateField={updateField}
+      />
 
-      {/* Delete Confirm Dialog */}
-      <Dialog
+      <DeleteConfirmDialog
         open={confirmDeleteId !== null}
-        onClose={() => {
-          if (!loading) setConfirmDeleteId(null);
-        }}
-        PaperProps={{ sx: { background: "#141414", border: "1px solid #333" } }}
-      >
-        <DialogTitle sx={{ color: "white", fontWeight: "bold" }}>
-          Delete this show?
-        </DialogTitle>
-        <DialogContent>
-          <Typography sx={{ color: "grey.500", fontSize: "0.875rem" }}>
-            This removes it from the live calendar.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button
-            onClick={() => setConfirmDeleteId(null)}
-            color="inherit"
-            disabled={loading}
-          >
-            Cancel
-          </Button>
-          <Button
-            onClick={confirmDelete}
-            variant="contained"
-            color="error"
-            disabled={loading}
-            sx={{ fontWeight: "bold", minWidth: "96px" }}
-            startIcon={
-              loading ? (
-                <CircularProgress size={16} color="inherit" />
-              ) : undefined
-            }
-          >
-            {loading ? "Deleting..." : "Delete"}
-          </Button>
-        </DialogActions>
-      </Dialog>
+        loading={loading}
+        onClose={() => setConfirmDeleteId(null)}
+        onConfirm={confirmDelete}
+      />
 
       {/* Toast */}
       <Snackbar

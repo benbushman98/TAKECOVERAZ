@@ -112,7 +112,7 @@ function Contact() {
             >
               <FaEnvelope color="#ef4444" size={18} />
               <Typography sx={{ color: "grey.300" }}>
-                takecoveraz@gmail.com
+                jayklepinger@gmail.com
               </Typography>
             </Box>
 
