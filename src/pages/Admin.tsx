@@ -268,6 +268,7 @@ function Admin() {
             variant="contained"
             color="success"
             onClick={addShow}
+            disabled={loading}
             sx={{ fontWeight: "bold", letterSpacing: "1px" }}
           >
             + Add Show
@@ -363,6 +364,7 @@ function Admin() {
                         <Button
                           variant="outlined"
                           size="small"
+                          disabled={loading}
                           onClick={() => openEdit(show)}
                         >
                           Edit
@@ -371,6 +373,7 @@ function Admin() {
                           variant="outlined"
                           color="error"
                           size="small"
+                          disabled={loading}
                           onClick={() => setConfirmDeleteId(show.id)}
                         >
                           Delete
@@ -466,6 +469,7 @@ function Admin() {
                     variant="outlined"
                     size="small"
                     fullWidth
+                    disabled={loading}
                     onClick={() => openEdit(show)}
                   >
                     Edit
@@ -475,6 +479,7 @@ function Admin() {
                     color="error"
                     size="small"
                     fullWidth
+                    disabled={loading}
                     onClick={() => setConfirmDeleteId(show.id)}
                   >
                     Delete
@@ -489,7 +494,9 @@ function Admin() {
       {/* Edit Dialog */}
       <Dialog
         open={!!editingShow}
-        onClose={closeEdit}
+        onClose={() => {
+          if (!loading) closeEdit();
+        }}
         maxWidth="sm"
         fullWidth
         PaperProps={{ sx: { background: "#111", border: "1px solid #2a2a2a" } }}
@@ -614,7 +621,9 @@ function Admin() {
       {/* Delete Confirm Dialog */}
       <Dialog
         open={confirmDeleteId !== null}
-        onClose={() => setConfirmDeleteId(null)}
+        onClose={() => {
+          if (!loading) setConfirmDeleteId(null);
+        }}
         PaperProps={{ sx: { background: "#141414", border: "1px solid #333" } }}
       >
         <DialogTitle sx={{ color: "white", fontWeight: "bold" }}>
