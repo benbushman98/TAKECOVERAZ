@@ -50,6 +50,7 @@ function App() {
               <Route path="/contact" element={<Contact />} errorElement={<ErrorPage />} />
               <Route path="/login" element={<Login />} errorElement={<ErrorPage />} />
               <Route path="/admin" element={<AdminRoute />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Box>
           <Box sx={{ bgcolor: 'black', height: '75px' }}>
