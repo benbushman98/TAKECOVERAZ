@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
@@ -75,9 +76,12 @@ function GalleryItem({ item }: { item: { name: string; src: string } }) {
 function PictureGallery() {
   return (
     <Box sx={{ width: '100%', m: 0, px: { xs: 1.5, lg: 5 }, mb: 5 }}>
-      <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, mb: 3, fontWeight: 'bold' }}>
+      <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
         See the Band in Action
       </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5, mb: 3 }}>
+        <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+      </Box>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
         <Box sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}>
           <VideoPanel src={VIDEO_URLS[0]} />

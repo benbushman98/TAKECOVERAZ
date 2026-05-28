@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
@@ -57,6 +58,9 @@ function Reviews() {
           <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold', px: { xs: 3, lg: 0 } }}>
             Hear Our Clients Thoughts
           </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
+            <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+          </Box>
           <Box sx={{ my: 3, py: 1.5, display: 'flex', justifyContent: 'center' }}>
             <Carousel sx={{ width: '75%', overflow: 'hidden' }}>
               {REVIEWS.map((item, i) => (

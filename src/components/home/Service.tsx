@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import MuiLink from '@mui/material/Link';
 import { Link as RouterLink } from 'react-router-dom';
@@ -22,6 +23,9 @@ function Service() {
           <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
             Service Area
           </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
+            <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+          </Box>
           <Box sx={{ color: 'white', textAlign: 'center', p: 5, mx: 1.5 }}>
             <Typography variant="h6">
               Just because we are Arizona&apos;s greatest rock cover band doesn&apos;t mean AZ is
