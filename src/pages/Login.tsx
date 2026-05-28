@@ -7,23 +7,21 @@ import Button from "@mui/material/Button";
 import { WORKER_URL } from "./admin/adminUtils";
 
 function Login() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await fetch(
-      `${WORKER_URL}/login`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
-      },
-    );
+    const res = await fetch(`${WORKER_URL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
 
     const data = await res.json();
     if (!data.success) {
-      setError("Incorrect password");
+      setError("Incorrect username or password");
       return;
     } else {
       localStorage.setItem("session", data.session);
@@ -53,8 +51,17 @@ function Login() {
           Admin Login
         </Typography>
         <TextField
+          label="Username"
+          variant="outlined"
+          fullWidth
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+          sx={{ mb: 2 }}
+        />
+        <TextField
           type="password"
-          label="Admin Password"
+          label="Password"
           variant="outlined"
           fullWidth
           value={password}
