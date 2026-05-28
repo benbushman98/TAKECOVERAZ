@@ -10,7 +10,7 @@ function Home() {
     <>
       <Box
         sx={{
-          backgroundImage: `url("https://images.pexels.com/photos/2078076/pexels-photo-2078076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
+          backgroundImage: 'url("https://images.pexels.com/photos/2078076/pexels-photo-2078076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
           height: '600px',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

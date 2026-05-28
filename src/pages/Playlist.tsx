@@ -6,7 +6,7 @@ import PageHeader from '../components/shared/PageHeader';
 
 function Playlist() {
   return (
-    <Box sx={{ mt: { xs: '116px', sm: '80px' } }}>
+    <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
       <PageHeader title="Playlist" />
       <Container sx={{ pt: 4 }}>
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>

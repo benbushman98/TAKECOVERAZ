@@ -4,19 +4,19 @@ import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
 
 const ITEMS = [
-  { name: 'Chad', src: 'Chad 3.jpeg' },
-  { name: 'Jay', src: 'jay.jpg' },
-  { name: 'Chad', src: 'Chad 4.jpeg' },
-  { name: 'Rob', src: 'rob_alvarez_2.jpeg' },
-  { name: 'Chad', src: 'Chad 5.jpeg' },
+  { name: 'Chad', src: 'Chad 3.webp' },
+  { name: 'Jay', src: 'jay.webp' },
+  { name: 'Chad', src: 'Chad 4.webp' },
+  { name: 'Rob', src: 'rob_alvarez_2.webp' },
+  { name: 'Chad', src: 'Chad 5.webp' },
   { name: 'Jay', src: 'jay_3.webp' },
-  { name: 'Chad', src: 'Chad 6.jpeg' },
-  { name: 'Jay', src: 'jay_1.jpeg' },
-  { name: 'Rob', src: 'rob_alvarez_1.jpeg' },
-  { name: 'Jay', src: 'takecover_drum.jpg' },
-  { name: 'Chad', src: 'Chad rockin.jpeg' },
+  { name: 'Chad', src: 'Chad 6.webp' },
+  { name: 'Jay', src: 'jay_1.webp' },
+  { name: 'Rob', src: 'rob_alvarez_1.webp' },
+  { name: 'Jay', src: 'takecover_drum.webp' },
+  { name: 'Chad', src: 'Chad rockin.webp' },
   { name: 'Jay', src: 'jay_2.webp' },
-  { name: 'Group', src: 'takecover_group.jpg' },
+  { name: 'Group', src: 'takecover_group.webp' },
 ];
 
 const VIDEO_URLS = [

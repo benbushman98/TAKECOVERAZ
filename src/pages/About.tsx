@@ -6,7 +6,7 @@ import PageHeader from '../components/shared/PageHeader';
 
 function About() {
   return (
-    <Box sx={{ mt: { xs: '116px', sm: '80px' } }}>
+    <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
       <PageHeader title="About Us" />
       <Container sx={{ mb: 5, px: 2 }}>
         <Box sx={{ textAlign: 'center', py: 3 }}>

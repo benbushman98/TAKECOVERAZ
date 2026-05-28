@@ -31,9 +31,9 @@ function BandFacts() {
   return (
     <Container sx={{ mt: 5, mb: 2 }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-        <StatCard icon="/images/icons8-drum-64.png" value="1067" label="Events Played" />
-        <StatCard icon="/images/icons8-company-64.png" value="45" label="Venues Played" />
-        <StatCard icon="/images/icons8-song-64.png" value={String(playlist.length)} label="Current Playlist" />
+        <StatCard icon="/images/icons8-drum-64.webp" value="1067" label="Events Played" />
+        <StatCard icon="/images/icons8-company-64.webp" value="45" label="Venues Played" />
+        <StatCard icon="/images/icons8-song-64.webp" value={String(playlist.length)} label="Current Playlist" />
       </Box>
     </Container>
   );

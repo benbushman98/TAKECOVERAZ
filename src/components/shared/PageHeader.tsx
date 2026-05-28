@@ -14,6 +14,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
         width: '100%',
         py: { xs: 6, md: 8 },
         background: 'linear-gradient(135deg, #1a0000 0%, #0d0d0d 50%, #1a0000 100%)',
+        borderTop: '2px solid',
         borderBottom: '2px solid',
         borderColor: 'error.main',
         textAlign: 'center',

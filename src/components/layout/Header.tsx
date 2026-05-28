@@ -61,7 +61,7 @@ function Header() {
 
   return (
     <Box sx={{ display: 'flex', bgcolor: '#000000' }}>
-      <AppBar component="nav" elevation={0} sx={{ backgroundColor: '#000000', borderBottom: '1px solid white' }}>
+      <AppBar component="nav" elevation={0} sx={{ backgroundColor: '#000000' }}>
         <Toolbar sx={{ pb: 1 }}>
           {/* Mobile: hamburger left */}
           <Box sx={{ display: { sm: 'none' }, width: 48, flexShrink: 0 }}>
