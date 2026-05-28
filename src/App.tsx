@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -30,9 +30,11 @@ const darkTheme = createTheme({
   },
 });
 
-function App() {
-  const isLoggedIn = !!localStorage.getItem('session');
+function AdminRoute() {
+  return localStorage.getItem('session') ? <Admin /> : <Navigate to="/login" replace />;
+}
 
+function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -47,7 +49,7 @@ function App() {
               <Route path="/playlist" element={<Playlist />} errorElement={<ErrorPage />} />
               <Route path="/contact" element={<Contact />} errorElement={<ErrorPage />} />
               <Route path="/login" element={<Login />} errorElement={<ErrorPage />} />
-              <Route path="/admin" element={isLoggedIn ? <Admin /> : <Login />} />
+              <Route path="/admin" element={<AdminRoute />} />
             </Routes>
           </Box>
           <Box sx={{ bgcolor: 'black', height: '75px' }}>
