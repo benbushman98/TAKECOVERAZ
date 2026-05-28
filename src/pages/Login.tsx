@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { WORKER_URL } from "./admin/adminUtils";
 
 function Login() {
   const [password, setPassword] = useState("");
@@ -12,7 +13,7 @@ function Login() {
 
   const handleLogin = async () => {
     const res = await fetch(
-      "https://takecoveraz.benbushman98.workers.dev/login",
+      `${WORKER_URL}/login`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { WORKER_URL } from './admin/adminUtils';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -23,7 +24,7 @@ function Calendar() {
   const [shows, setShows] = useState<Show[]>([]);
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json')
+    fetch(`${WORKER_URL}/shows`)
       .then((res) => res.json())
       .then((data: Show[]) => {
         const today = new Date();

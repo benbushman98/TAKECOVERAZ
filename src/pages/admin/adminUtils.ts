@@ -1,4 +1,4 @@
-export const WORKER_URL = "https://takecoveraz.benbushman98.workers.dev";
+export const WORKER_URL = "https://take-cover-api.benbushman98.workers.dev";
 
 export const DAYS_OF_WEEK = [
   "Sunday",

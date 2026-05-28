@@ -36,9 +36,7 @@ function Admin() {
   }, [navigate]);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/benbushman98/TAKECOVERAZ/main/public/data/shows.json",
-    )
+    fetch(`${WORKER_URL}/shows`)
       .then((res) => res.json())
       .then((data: Show[]) => {
         const sortedShows = data.sort(
