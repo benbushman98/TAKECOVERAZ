@@ -1,8 +1,11 @@
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
+
+const MotionBox = motion.create(Box as any);
 
 interface ReviewItem {
   name: string;
@@ -54,7 +57,13 @@ function Reviews() {
   return (
     <Box sx={{ width: '100%', p: 0 }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', m: 0, minHeight: '500px' }}>
-        <Box sx={{ width: { xs: '100%', lg: '50%' }, p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <MotionBox
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+        >
           <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold', px: { xs: 3, lg: 0 } }}>
             Hear Our Clients Thoughts
           </Typography>
@@ -68,16 +77,22 @@ function Reviews() {
               ))}
             </Carousel>
           </Box>
-        </Box>
+        </MotionBox>
 
-        <Box sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}>
+        <MotionBox
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}
+        >
           <Box
             component="img"
             src="/images/theBand.webp"
             alt="Take Cover Band"
             sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
-        </Box>
+        </MotionBox>
       </Box>
     </Box>
   );

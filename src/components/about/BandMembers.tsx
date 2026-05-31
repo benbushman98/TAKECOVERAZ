@@ -1,16 +1,26 @@
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import bandMemberData from '../../data/bandmembers.json';
 import type { BandMember } from '../../types/bandMember';
 
+const MotionBox = motion.create(Box as any);
 const members = bandMemberData as BandMember[];
 
 function BandMembers() {
   return (
     <>
-      {members.map((member) => (
-        <Box
+      {members.map((member, i) => (
+        <MotionBox
           key={member.id}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.03 }}
+          transition={{
+            default: { delay: i * 0.12, duration: 0.5, ease: 'easeOut' },
+            scale: { duration: 0.2, ease: 'easeOut' },
+          }}
           sx={{
             position: 'relative',
             width: { xs: '100%', sm: 'calc(33.333% - 16px)' },
@@ -18,6 +28,7 @@ function BandMembers() {
             borderRadius: 2,
             overflow: 'hidden',
             aspectRatio: '3/4',
+            cursor: 'default',
           }}
         >
           <Box
@@ -50,7 +61,7 @@ function BandMembers() {
               {member.instrument}
             </Typography>
           </Box>
-        </Box>
+        </MotionBox>
       ))}
     </>
   );

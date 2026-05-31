@@ -1,14 +1,23 @@
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import MuiLink from '@mui/material/Link';
 import { Link as RouterLink } from 'react-router-dom';
 
+const MotionBox = motion.create(Box as any);
+
 function Service() {
   return (
     <Box sx={{ width: '100%', p: 0 }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%', m: 0, minHeight: '500px' }}>
-        <Box sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}>
+        <MotionBox
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}
+        >
           <Box
             component="iframe"
             sx={{ width: '100%', height: '100%', display: 'block', border: 'none' }}
@@ -18,8 +27,15 @@ function Service() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </Box>
-        <Box sx={{ width: { xs: '100%', lg: '50%' }, p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        </MotionBox>
+
+        <MotionBox
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+        >
           <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
             Service Area
           </Typography>
@@ -36,7 +52,7 @@ function Service() {
               and we&apos;ll talk!
             </Typography>
           </Box>
-        </Box>
+        </MotionBox>
       </Box>
     </Box>
   );

@@ -1,8 +1,11 @@
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
+
+const MotionBox = motion.create(Box as any);
 
 const ITEMS = [
   { name: 'Chad', src: 'Chad 3.webp' },
@@ -76,30 +79,63 @@ function GalleryItem({ item }: { item: { name: string; src: string } }) {
 function PictureGallery() {
   return (
     <Box sx={{ width: '100%', m: 0, px: { xs: 1.5, lg: 5 }, mb: 5 }}>
-      <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
-        See the Band in Action
-      </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5, mb: 3 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
+          See the Band in Action
+        </Typography>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+        style={{ display: 'flex', justifyContent: 'center', marginTop: '12px', marginBottom: '24px' }}
+      >
         <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
-      </Box>
+      </motion.div>
+
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
-        <Box sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+        <MotionBox
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}
+        >
           <VideoPanel src={VIDEO_URLS[0]} />
           <VideoPanel src={VIDEO_URLS[2]} />
-        </Box>
+        </MotionBox>
 
-        <Box sx={{ flexGrow: 1, minWidth: { xs: '100%', lg: 0 } }}>
+        <MotionBox
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
+          sx={{ flexGrow: 1, minWidth: { xs: '100%', lg: 0 } }}
+        >
           <Carousel autoPlay animation="slide" interval={4000} navButtonsAlwaysVisible sx={{ borderRadius: 3, overflow: 'hidden' }}>
             {ITEMS.map((item, i) => (
               <GalleryItem key={i} item={item} />
             ))}
           </Carousel>
-        </Box>
+        </MotionBox>
 
-        <Box sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+        <MotionBox
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}
+        >
           <VideoPanel src={VIDEO_URLS[1]} />
           <VideoPanel src={VIDEO_URLS[3]} />
-        </Box>
+        </MotionBox>
       </Box>
     </Box>
   );

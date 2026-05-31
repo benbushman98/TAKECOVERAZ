@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { motion } from "motion/react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import Box from "@mui/material/Box";
@@ -10,6 +11,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { FaFacebook, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
+
+const MotionBox = motion.create(Box as any);
 
 interface ContactForm {
   name: string;
@@ -83,11 +86,16 @@ function Contact() {
     <Box sx={{ mt: { xs: "124px", sm: "124px" } }}>
       <PageHeader title="Contact Us" subtitle="Got a gig? A question? Just want to say hey?" />
 
-      {/* Two-column body */}
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 6, md: 4 } }}>
           {/* Left — info & socials */}
-          <Box sx={{ flex: "1 1 280px", color: "white" }}>
+          <MotionBox
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            sx={{ flex: "1 1 280px", color: "white" }}
+          >
             <Typography
               variant="h5"
               fontWeight="bold"
@@ -168,10 +176,16 @@ function Contact() {
                 <FaYoutube />
               </IconButton>
             </Box>
-          </Box>
+          </MotionBox>
 
           {/* Right — form */}
-          <Box sx={{ flex: "1 1 400px" }}>
+          <MotionBox
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            sx={{ flex: "1 1 400px" }}
+          >
             <Box
               component="form"
               onSubmit={handleSubmit}
@@ -267,7 +281,7 @@ function Contact() {
                 </Typography>
               )}
             </Box>
-          </Box>
+          </MotionBox>
         </Box>
       </Container>
     </Box>
