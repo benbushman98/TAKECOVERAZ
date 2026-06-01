@@ -16,6 +16,7 @@ import CardContent from '@mui/material/CardContent';
 import Skeleton from '@mui/material/Skeleton';
 import Link from '@mui/material/Link';
 import PageHeader from '../components/shared/PageHeader';
+import PageMeta from '../components/shared/PageMeta';
 import type { Show } from '../types/show';
 
 const SKELETON_COUNT = 4;
@@ -44,6 +45,11 @@ function Calendar() {
 
   return (
     <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+      <PageMeta
+        title="Upcoming Shows"
+        path="/calendar"
+        description="See where Take Cover! AZ is playing next. Find upcoming shows across Arizona and catch us live."
+      />
       <PageHeader title="Upcoming Shows" subtitle="Catch us live — we'll see you in the pit." />
       <Container sx={{ color: 'white', py: 5 }}>
 

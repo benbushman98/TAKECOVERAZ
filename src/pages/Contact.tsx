@@ -11,6 +11,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { FaFacebook, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
+import PageMeta from "../components/shared/PageMeta";
 
 const MotionBox = motion.create(Box as any);
 
@@ -84,6 +85,11 @@ function Contact() {
 
   return (
     <Box sx={{ mt: { xs: "124px", sm: "124px" } }}>
+      <PageMeta
+        title="Contact Us"
+        path="/contact"
+        description="Book Take Cover! AZ for your event or get in touch. We'd love to hear from you about upcoming gigs across Arizona."
+      />
       <PageHeader title="Contact Us" subtitle="Got a gig? A question? Just want to say hey?" />
 
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>

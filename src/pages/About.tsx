@@ -4,12 +4,18 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import BandMembers from '../components/about/BandMembers';
 import PageHeader from '../components/shared/PageHeader';
+import PageMeta from '../components/shared/PageMeta';
 
 const MotionBox = motion.create(Box as any);
 
 function About() {
   return (
     <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+      <PageMeta
+        title="About Us"
+        path="/about"
+        description="Meet the members of Take Cover! AZ — a seasoned rock/pop cover band performing hits from the 60s through today across Arizona."
+      />
       <PageHeader title="About Us" />
       <Container sx={{ mb: 5, px: 2 }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center', py: 3 }}>

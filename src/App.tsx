@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -43,6 +44,7 @@ function AdminRoute() {
 
 function App() {
   return (
+    <HelmetProvider>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <BrowserRouter>
@@ -67,6 +69,7 @@ function App() {
         </Box>
       </BrowserRouter>
     </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

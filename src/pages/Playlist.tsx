@@ -4,10 +4,16 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import PlaylistCard from '../components/playlist/PlaylistCard';
 import PageHeader from '../components/shared/PageHeader';
+import PageMeta from '../components/shared/PageMeta';
 
 function Playlist() {
   return (
     <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+      <PageMeta
+        title="Playlist"
+        path="/playlist"
+        description="Browse the Take Cover! AZ setlist — hits from the Beatles, Queen, Bon Jovi, The Killers, and many more."
+      />
       <PageHeader title="Playlist" />
       <Container sx={{ pt: 4 }}>
         <motion.div

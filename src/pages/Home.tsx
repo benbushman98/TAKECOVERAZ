@@ -8,10 +8,15 @@ import BandFacts from '../components/home/BandFacts';
 import Reviews from '../components/home/Reviews';
 import Service from '../components/home/Service';
 import PictureGallery from '../components/home/PictureGallery';
+import PageMeta from '../components/shared/PageMeta';
 
 function Home() {
   return (
     <>
+      <PageMeta
+        title="Take Cover! AZ"
+        path="/"
+      />
       <Box
         sx={{
           backgroundImage: 'url("https://images.pexels.com/photos/2078076/pexels-photo-2078076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
