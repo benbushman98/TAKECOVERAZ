@@ -16,6 +16,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Calendar from './pages/Calendar';
 import Playlist from './pages/Playlist';
+import VideoGallery from './pages/VideoGallery';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Admin from './pages/admin/Admin';
@@ -57,6 +58,7 @@ function App() {
               <Route path="/about" element={<About />} errorElement={<ErrorPage />} />
               <Route path="/calendar" element={<Calendar />} errorElement={<ErrorPage />} />
               <Route path="/playlist" element={<Playlist />} errorElement={<ErrorPage />} />
+              <Route path="/videos" element={<VideoGallery />} errorElement={<ErrorPage />} />
               <Route path="/contact" element={<Contact />} errorElement={<ErrorPage />} />
               <Route path="/login" element={<Login />} errorElement={<ErrorPage />} />
               <Route path="/admin" element={<AdminRoute />} />

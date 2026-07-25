@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 const DRAWER_WIDTH = 200;
 const NAV_ITEMS = [
   { label: 'About', path: '/about' },
+  { label: 'Videos', path: '/videos' },
   { label: 'Calendar', path: '/calendar' },
   { label: 'Playlist', path: '/playlist' },
   { label: 'Contact', path: '/contact' },

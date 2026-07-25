@@ -1,9 +1,11 @@
 import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Carousel from 'react-material-ui-carousel';
+import { Link as RouterLink } from 'react-router-dom';
 
 const MotionBox = motion.create(Box as any);
 
@@ -137,6 +139,33 @@ function PictureGallery() {
           <VideoPanel src={VIDEO_URLS[3]} />
         </MotionBox>
       </Box>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}
+      >
+        <Button
+          component={RouterLink}
+          to="/videos"
+          variant="outlined"
+          size="large"
+          sx={{
+            color: 'white',
+            borderColor: 'error.main',
+            fontWeight: 'bold',
+            letterSpacing: 2,
+            px: 4,
+            py: 1.25,
+            textTransform: 'uppercase',
+            '&:hover': { borderColor: 'error.dark', bgcolor: 'error.main' },
+          }}
+        >
+          See More Videos
+        </Button>
+      </motion.div>
     </Box>
   );
 }
