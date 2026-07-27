@@ -27,11 +27,11 @@ const inputSx = {
   "& .MuiOutlinedInput-root": {
     color: "white",
     "& fieldset": { borderColor: "grey.700" },
-    "&:hover fieldset": { borderColor: "error.main" },
-    "&.Mui-focused fieldset": { borderColor: "error.main" },
+    "&:hover fieldset": { borderColor: "primary.main" },
+    "&.Mui-focused fieldset": { borderColor: "primary.main" },
   },
   "& .MuiInputLabel-root": { color: "grey.500" },
-  "& .MuiInputLabel-root.Mui-focused": { color: "error.main" },
+  "& .MuiInputLabel-root.Mui-focused": { color: "primary.main" },
 };
 
 function Contact() {
@@ -106,7 +106,7 @@ function Contact() {
               variant="h5"
               fontWeight="bold"
               sx={{
-                color: "error.main",
+                color: "primary.main",
                 mb: 1,
                 textTransform: "uppercase",
                 letterSpacing: 2,
@@ -124,7 +124,7 @@ function Contact() {
             <Box
               sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}
             >
-              <FaEnvelope color="#ef4444" size={18} />
+              <FaEnvelope color="#C8102E" size={18} />
               <Typography sx={{ color: "grey.300" }}>
                 jayklepinger@gmail.com
               </Typography>
@@ -152,8 +152,8 @@ function Contact() {
                   borderRadius: 1,
                   fontSize: "1.4rem",
                   "&:hover": {
-                    borderColor: "error.main",
-                    color: "error.main",
+                    borderColor: "primary.main",
+                    color: "primary.main",
                     bgcolor: "transparent",
                   },
                 }}
@@ -173,8 +173,8 @@ function Contact() {
                   borderRadius: 1,
                   fontSize: "1.4rem",
                   "&:hover": {
-                    borderColor: "error.main",
-                    color: "error.main",
+                    borderColor: "primary.main",
+                    color: "primary.main",
                     bgcolor: "transparent",
                   },
                 }}
@@ -196,7 +196,7 @@ function Contact() {
               component="form"
               onSubmit={handleSubmit}
               sx={{
-                bgcolor: "#111",
+                bgcolor: "background.paper",
                 border: "1px solid",
                 borderColor: "grey.800",
                 borderRadius: 2,
@@ -260,14 +260,11 @@ function Contact() {
                 variant="contained"
                 fullWidth
                 sx={{
-                  bgcolor: "error.main",
-                  color: "white",
                   fontWeight: "bold",
                   letterSpacing: 2,
                   py: 1.5,
                   fontSize: "1rem",
                   textTransform: "uppercase",
-                  "&:hover": { bgcolor: "error.dark" },
                 }}
               >
                 Send Message

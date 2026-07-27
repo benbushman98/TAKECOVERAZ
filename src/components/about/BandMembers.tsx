@@ -16,11 +16,7 @@ function BandMembers() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          whileHover={{ scale: 1.03 }}
-          transition={{
-            default: { delay: i * 0.12, duration: 0.5, ease: 'easeOut' },
-            scale: { duration: 0.2, ease: 'easeOut' },
-          }}
+          transition={{ delay: i * 0.12, duration: 0.5, ease: 'easeOut' }}
           sx={{
             position: 'relative',
             width: { xs: '100%', sm: 'calc(33.333% - 16px)' },

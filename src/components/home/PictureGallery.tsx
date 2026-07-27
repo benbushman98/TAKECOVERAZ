@@ -10,19 +10,14 @@ import { Link as RouterLink } from 'react-router-dom';
 const MotionBox = motion.create(Box as any);
 
 const ITEMS = [
-  { name: 'Chad', src: 'Chad 3.webp' },
-  { name: 'Jay', src: 'jay.webp' },
-  { name: 'Chad', src: 'Chad 4.webp' },
-  { name: 'Rob', src: 'rob_alvarez_2.webp' },
-  { name: 'Chad', src: 'Chad 5.webp' },
-  { name: 'Jay', src: 'jay_3.webp' },
-  { name: 'Chad', src: 'Chad 6.webp' },
-  { name: 'Jay', src: 'jay_1.webp' },
-  { name: 'Rob', src: 'rob_alvarez_1.webp' },
-  { name: 'Jay', src: 'takecover_drum.webp' },
   { name: 'Chad', src: 'Chad rockin.webp' },
-  { name: 'Jay', src: 'jay_2.webp' },
+  { name: 'Jay', src: 'jay.webp' },
+  { name: 'Rob', src: 'rob_alvarez_1.webp' },
   { name: 'Group', src: 'takecover_group.webp' },
+  { name: 'Chad', src: 'Chad 4.webp' },
+  { name: 'Jay', src: 'jay_2.webp' },
+  { name: 'Rob', src: 'rob_alvarez_2.webp' },
+  { name: 'Jay', src: 'takecover_drum.webp' },
 ];
 
 const VIDEO_URLS = [
@@ -90,16 +85,9 @@ function PictureGallery() {
         <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
           See the Band in Action
         </Typography>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.4 }}
-        style={{ display: 'flex', justifyContent: 'center', marginTop: '12px', marginBottom: '24px' }}
-      >
-        <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5, mb: 3 }}>
+          <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
+        </Box>
       </motion.div>
 
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
@@ -140,13 +128,7 @@ function PictureGallery() {
         </MotionBox>
       </Box>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}
-      >
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
         <Button
           component={RouterLink}
           to="/videos"
@@ -154,18 +136,18 @@ function PictureGallery() {
           size="large"
           sx={{
             color: 'white',
-            borderColor: 'error.main',
+            borderColor: 'primary.main',
             fontWeight: 'bold',
             letterSpacing: 2,
             px: 4,
             py: 1.25,
             textTransform: 'uppercase',
-            '&:hover': { borderColor: 'error.dark', bgcolor: 'error.main' },
+            '&:hover': { borderColor: 'primary.dark', bgcolor: 'primary.main' },
           }}
         >
           See More Videos
         </Button>
-      </motion.div>
+      </Box>
     </Box>
   );
 }

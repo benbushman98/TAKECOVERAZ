@@ -10,13 +10,13 @@ const MotionBox = motion.create(Box as any);
 function Service() {
   return (
     <Box sx={{ width: '100%', p: 0 }}>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%', m: 0, minHeight: '500px' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%', m: 0, minHeight: '350px' }}>
         <MotionBox
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '400px' }}
+          sx={{ width: { xs: '100%', lg: '50%' }, p: 0, minHeight: '300px' }}
         >
           <Box
             component="iframe"
@@ -40,16 +40,15 @@ function Service() {
             Service Area
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
-            <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+            <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
           </Box>
-          <Box sx={{ color: 'white', textAlign: 'center', p: 5, mx: 1.5 }}>
+          <Box sx={{ color: 'white', textAlign: 'center', p: 3, mx: 'auto', maxWidth: 420 }}>
             <Typography variant="h6">
-              Just because we are Arizona&apos;s greatest rock cover band doesn&apos;t mean AZ is
-              the only place that gets us.{' '}
-              <MuiLink component={RouterLink} to="/contact" sx={{ color: 'error.main' }}>
+              Arizona&apos;s favorite rock cover band travels.{' '}
+              <MuiLink component={RouterLink} to="/contact" sx={{ color: 'primary.main' }}>
                 Contact us
               </MuiLink>{' '}
-              and we&apos;ll talk!
+              and let&apos;s talk!
             </Typography>
           </Box>
         </MotionBox>

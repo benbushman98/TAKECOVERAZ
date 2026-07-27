@@ -17,7 +17,7 @@ const REVIEWS: ReviewItem[] = [
   {
     name: 'Danny G.',
     review:
-      '"Take Cover" thats what I did when they started to play. Awesome sound, great vocals, super personalties when they migled with our crowd. We had a corporate holiday party and they made the day. The only problem was they did not know the song "ice castles" \n Seriously, great day and everyone commented on the band.',
+      '"Take Cover" — that\'s what I did when they started to play. Awesome sound, great vocals, super personalities when they mingled with our crowd. We had a corporate holiday party and they made the day. The only problem was they did not know the song "Ice Castles." \n Seriously, great day and everyone commented on the band.',
     company: "Tony's Service Center",
   },
   {
@@ -42,7 +42,7 @@ const REVIEWS: ReviewItem[] = [
 
 function ReviewCard({ item }: { item: ReviewItem }) {
   return (
-    <Paper elevation={0} sx={{ bgcolor: '#202529' }}>
+    <Paper elevation={0} sx={{ bgcolor: 'background.paper' }}>
       <Box sx={{ textAlign: 'center', color: 'white', px: 1.5 }}>
         <Typography>{item.review}</Typography>
         <Typography variant="h5" fontWeight="bold">{item.name}</Typography>
@@ -68,7 +68,7 @@ function Reviews() {
             Hear Our Clients Thoughts
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
-            <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+            <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
           </Box>
           <Box sx={{ my: 3, py: 1.5, display: 'flex', justifyContent: 'center' }}>
             <Carousel sx={{ width: '75%', overflow: 'hidden' }}>

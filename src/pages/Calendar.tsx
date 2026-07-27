@@ -86,15 +86,8 @@ function Calendar() {
                         </TableCell>
                       </TableRow>
                     ))
-                  : shows.map((show, i) => (
-                      <motion.tr
-                        key={show.id}
-                        initial={{ opacity: 0, x: -16 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.06, duration: 0.4, ease: 'easeOut' }}
-                        style={{ display: 'table-row' }}
-                      >
+                  : shows.map((show) => (
+                      <TableRow key={show.id}>
                         <TableCell sx={{ color: 'white', textAlign: 'center' }}>
                           <Typography fontWeight="bold">{show.day}</Typography>
                           <Typography>{new Date(show.date + 'T00:00:00').toLocaleDateString()}</Typography>
@@ -115,12 +108,12 @@ function Calendar() {
                             </Box>
                           )}
                           {show.notes && (
-                            <Typography variant="body2" sx={{ mt: 1, color: 'error.light', fontStyle: 'italic' }}>
+                            <Typography variant="body2" sx={{ mt: 1, color: 'primary.light', fontStyle: 'italic' }}>
                               {show.notes}
                             </Typography>
                           )}
                         </TableCell>
-                      </motion.tr>
+                      </TableRow>
                     ))}
               </TableBody>
             </Table>
@@ -131,7 +124,7 @@ function Calendar() {
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           {loading
             ? Array.from({ length: SKELETON_COUNT }).map((_, i) => (
-                <Card key={i} sx={{ bgcolor: '#202529', mb: 1.5, border: '1px solid', borderColor: 'grey.700', borderRadius: 3 }}>
+                <Card key={i} sx={{ bgcolor: 'background.paper', mb: 1.5, border: '1px solid', borderColor: 'grey.700', borderRadius: 3 }}>
                   <CardContent>
                     <Skeleton variant="text" width="60%" sx={{ bgcolor: 'grey.800', mb: 0.5 }} height={32} />
                     <Skeleton variant="text" width="45%" sx={{ bgcolor: 'grey.800' }} />
@@ -140,38 +133,30 @@ function Calendar() {
                   </CardContent>
                 </Card>
               ))
-            : shows.map((show, i) => (
-                <motion.div
-                  key={show.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.07, duration: 0.4, ease: 'easeOut' }}
-                >
-                  <Card sx={{ bgcolor: '#202529', color: 'white', mb: 1.5, border: '1px solid', borderColor: 'grey.500', borderRadius: 3 }}>
-                    <CardContent>
-                      <Typography variant="h6" fontWeight="bold">{show.title}</Typography>
-                      <Typography><strong>Date:</strong> {new Date(show.date + 'T00:00:00').toLocaleDateString()}</Typography>
-                      <Typography><strong>Time:</strong> {show.timeStart} &ndash; {show.timeEnd}</Typography>
-                      <Typography>
-                        <strong>Address:</strong>{' '}
-                        <Link href={getMapsLink(show.address)} target="_blank" rel="noopener noreferrer">
-                          {show.address}
-                        </Link>
+            : shows.map((show) => (
+                <Card key={show.id} sx={{ bgcolor: 'background.paper', color: 'white', mb: 1.5, border: '1px solid', borderColor: 'grey.500', borderRadius: 3 }}>
+                  <CardContent>
+                    <Typography variant="h6" fontWeight="bold">{show.title}</Typography>
+                    <Typography><strong>Date:</strong> {new Date(show.date + 'T00:00:00').toLocaleDateString()}</Typography>
+                    <Typography><strong>Time:</strong> {show.timeStart} &ndash; {show.timeEnd}</Typography>
+                    <Typography>
+                      <strong>Address:</strong>{' '}
+                      <Link href={getMapsLink(show.address)} target="_blank" rel="noopener noreferrer">
+                        {show.address}
+                      </Link>
+                    </Typography>
+                    {show.notes && (
+                      <Typography variant="body2" sx={{ color: 'primary.light', fontStyle: 'italic' }}>
+                        {show.notes}
                       </Typography>
-                      {show.notes && (
-                        <Typography variant="body2" sx={{ color: 'error.light', fontStyle: 'italic' }}>
-                          {show.notes}
-                        </Typography>
-                      )}
-                      {show.link && (
-                        <Link href={show.link} target="_blank" rel="noopener noreferrer" variant="body2" sx={{ mt: 1, display: 'block' }}>
-                          {show.link}
-                        </Link>
-                      )}
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                    )}
+                    {show.link && (
+                      <Link href={show.link} target="_blank" rel="noopener noreferrer" variant="body2" sx={{ mt: 1, display: 'block' }}>
+                        {show.link}
+                      </Link>
+                    )}
+                  </CardContent>
+                </Card>
               ))}
         </Box>
 

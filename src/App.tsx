@@ -25,10 +25,22 @@ import ErrorPage from './pages/Error';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
-    background: {
-      default: '#000',
-      paper: '#111',
+    primary: {
+      main: '#C8102E',
     },
+    background: {
+      default: '#0a0a0a',
+      paper: '#141414',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: { fontFamily: '"Oswald", sans-serif' },
+    h2: { fontFamily: '"Oswald", sans-serif' },
+    h3: { fontFamily: '"Oswald", sans-serif' },
+    h4: { fontFamily: '"Oswald", sans-serif' },
+    h5: { fontFamily: '"Oswald", sans-serif' },
+    h6: { fontFamily: '"Oswald", sans-serif' },
   },
   components: {
     MuiAppBar: {

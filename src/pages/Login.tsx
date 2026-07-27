@@ -44,38 +44,22 @@ function Login() {
         alignItems: "center",
         justifyContent: "center",
         minHeight: "100vh",
-        background:
-          "linear-gradient(135deg, #1a0000 0%, #0d0d0d 50%, #1a0000 100%)",
-        position: "relative",
-        overflow: "hidden",
+        bgcolor: "background.default",
         px: 2,
         pt: "120px",
         pb: 6,
       }}
     >
-      {/* Subtle grid overlay matching site style */}
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          opacity: 0.04,
-          backgroundImage:
-            "repeating-linear-gradient(0deg, white 0px, white 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, white 0px, white 1px, transparent 1px, transparent 40px)",
-          pointerEvents: "none",
-        }}
-      />
-
       <Card
         sx={{
           width: "100%",
           maxWidth: 420,
-          bgcolor: "rgba(17, 17, 17, 0.95)",
+          bgcolor: "background.paper",
           border: "1px solid",
-          borderColor: "error.main",
+          borderColor: "grey.800",
           borderRadius: 2,
           p: { xs: 3, sm: 4 },
-          position: "relative",
-          boxShadow: "0 0 40px rgba(220, 53, 69, 0.2)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
         }}
       >
         {/* Band logo */}
@@ -102,12 +86,11 @@ function Login() {
               width: 52,
               height: 52,
               borderRadius: "50%",
-              bgcolor: "error.main",
+              bgcolor: "primary.main",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               mb: 2,
-              boxShadow: "0 0 20px rgba(220, 53, 69, 0.4)",
             }}
           >
             <LockOutlinedIcon sx={{ color: "white", fontSize: 24 }} />
@@ -126,7 +109,7 @@ function Login() {
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center", mt: 1.5 }}>
             <Divider
-              sx={{ width: 60, borderColor: "error.main", borderWidth: 2 }}
+              sx={{ width: 60, borderColor: "primary.main", borderWidth: 2 }}
             />
           </Box>
         </Box>
@@ -162,7 +145,6 @@ function Login() {
 
         <Button
           variant="contained"
-          color="error"
           fullWidth
           size="large"
           disabled={loading}

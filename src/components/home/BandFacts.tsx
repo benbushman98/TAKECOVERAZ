@@ -27,16 +27,10 @@ function StatCard({ Icon, value, label, delay = 0 }: StatCardProps) {
       transition={{ delay, duration: 0.55, ease: 'easeOut' }}
       sx={{ width: { xs: '100%', sm: '33.33%' }, display: 'flex', justifyContent: 'center' }}
     >
-      <Box sx={{ m: 2, borderRadius: 1, color: 'white', textAlign: 'center', width: 288 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Box sx={{ width: 144, height: 144, border: '4px solid', borderColor: 'error.main', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Box sx={{ width: 112, height: 112, bgcolor: 'grey.800', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', transform: 'translateZ(0)' }}>
-              <Icon sx={{ fontSize: 64, color: 'white'}} />
-            </Box>
-          </Box>
-        </Box>
+      <Box sx={{ m: 2, color: 'white', textAlign: 'center', width: 288 }}>
+        <Icon sx={{ fontSize: 64, color: 'primary.main', mb: 1 }} />
         <Typography variant="h3" fontWeight="bold">{value}</Typography>
-        <Typography variant="h6">{label}</Typography>
+        <Typography variant="h6" sx={{ color: 'grey.400', textTransform: 'uppercase', letterSpacing: 1 }}>{label}</Typography>
       </Box>
     </MotionBox>
   );
@@ -56,7 +50,7 @@ function BandFacts() {
             By The Numbers
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
-            <Divider sx={{ width: 80, borderColor: 'error.main', borderWidth: 2 }} />
+            <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
           </Box>
         </Box>
       </motion.div>

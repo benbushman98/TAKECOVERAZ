@@ -164,7 +164,8 @@ function Admin() {
             alignItems: "center",
             py: 1.5,
             mb: 3,
-            borderBottom: "2px solid #dc3545",
+            borderBottom: "2px solid",
+            borderColor: "primary.main",
             mt: 5,
           }}
         >
@@ -280,7 +281,7 @@ function Admin() {
           }}
         >
           <Table size="small" sx={{ textAlign: "center" }}>
-            <TableHead sx={{ borderBottom: "2px solid #dc3545" }}>
+            <TableHead sx={{ borderBottom: "2px solid", borderColor: "primary.main" }}>
               <TableRow>
                 {["Date", "Day", "Time", "Venue", "Location", "Actions"].map(
                   (h) => (
@@ -397,9 +398,9 @@ function Admin() {
                   mb: 1.5,
                   p: 1.5,
                   borderRadius: 2,
-                  bgcolor: "#111",
+                  bgcolor: "background.paper",
                   border: "1px solid #1e1e1e",
-                  borderLeft: `3px solid ${isPast ? "#444" : "#dc3545"}`,
+                  borderLeft: `3px solid ${isPast ? "#444" : "#C8102E"}`,
                   opacity: isPast ? 0.55 : 1,
                   transition: "opacity 0.2s",
                 }}
@@ -427,7 +428,7 @@ function Admin() {
                     </Typography>
                     <Typography
                       sx={{
-                        color: "error.main",
+                        color: "primary.main",
                         fontWeight: 600,
                         fontSize: "0.75rem",
                       }}

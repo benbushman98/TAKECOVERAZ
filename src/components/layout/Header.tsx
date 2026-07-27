@@ -40,7 +40,7 @@ function Header() {
           <ListItemButton
             component={RouterLink}
             to="/"
-            sx={{ justifyContent: 'center', color: location.pathname === '/' ? 'error.main' : 'white', my: 1 }}
+            sx={{ justifyContent: 'center', color: location.pathname === '/' ? 'primary.main' : 'white', my: 1 }}
           >
             <ListItemText primary="Home" sx={{ textAlign: 'center' }} />
           </ListItemButton>
@@ -50,7 +50,7 @@ function Header() {
             <ListItemButton
               component={RouterLink}
               to={path}
-              sx={{ justifyContent: 'center', color: isActive(path) ? 'error.main' : 'white', my: 1 }}
+              sx={{ justifyContent: 'center', color: isActive(path) ? 'primary.main' : 'white', my: 1 }}
             >
               <ListItemText primary={label} sx={{ textAlign: 'center' }} />
             </ListItemButton>
@@ -86,7 +86,7 @@ function Header() {
             <Button
               component={RouterLink}
               to="/"
-              sx={{ color: location.pathname === '/' ? 'error.main' : 'white' }}
+              sx={{ color: location.pathname === '/' ? 'primary.main' : 'white' }}
             >
               Home
             </Button>
@@ -95,7 +95,7 @@ function Header() {
                 key={path}
                 component={RouterLink}
                 to={path}
-                sx={{ color: isActive(path) ? 'error.main' : 'white' }}
+                sx={{ color: isActive(path) ? 'primary.main' : 'white' }}
               >
                 {label}
               </Button>

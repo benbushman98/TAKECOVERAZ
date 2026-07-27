@@ -43,7 +43,7 @@ function EventDialog({
       onClose={handleClose}
       maxWidth="sm"
       fullWidth
-      PaperProps={{ sx: { background: "#111", border: "1px solid #2a2a2a" } }}
+      PaperProps={{ sx: { background: "#141414", border: "1px solid #2a2a2a" } }}
     >
       <DialogTitle
         sx={{
@@ -51,7 +51,7 @@ function EventDialog({
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: "1px",
-          borderBottom: "2px solid #dc3545",
+          borderBottom: "2px solid #C8102E",
         }}
       >
         {isExistingShow ? "Edit Show" : "Add Show"}
