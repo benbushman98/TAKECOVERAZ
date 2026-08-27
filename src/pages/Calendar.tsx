@@ -18,6 +18,7 @@ import Link from '@mui/material/Link';
 import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
 import type { Show } from '../types/show';
+import { formatShowDate, isUpcoming, todayISO } from '../utils/date';
 
 const SKELETON_COUNT = 4;
 
@@ -33,11 +34,13 @@ function Calendar() {
     fetch(`${WORKER_URL}/shows`)
       .then((res) => res.json())
       .then((data: Show[]) => {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
+        // Compared as `YYYY-MM-DD` strings, not Dates: `new Date(show.date)` parses a
+        // date-only string as UTC midnight while a local `today` is 7 hours later in
+        // Arizona, which hid every show for the whole of the day it was being played.
+        const today = todayISO();
         const upcoming = data
-          .filter((show) => new Date(show.date) >= today)
-          .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+          .filter((show) => isUpcoming(show.date, today))
+          .sort((a, b) => a.date.localeCompare(b.date));
         setShows(upcoming);
       })
       .finally(() => setLoading(false));
@@ -90,7 +93,7 @@ function Calendar() {
                       <TableRow key={show.id}>
                         <TableCell sx={{ color: 'white', textAlign: 'center' }}>
                           <Typography fontWeight="bold">{show.day}</Typography>
-                          <Typography>{new Date(show.date + 'T00:00:00').toLocaleDateString()}</Typography>
+                          <Typography>{formatShowDate(show.date)}</Typography>
                         </TableCell>
                         <TableCell sx={{ color: 'white', textAlign: 'center' }}>
                           {show.timeStart} &ndash; {show.timeEnd}
@@ -137,7 +140,7 @@ function Calendar() {
                 <Card key={show.id} sx={{ bgcolor: 'background.paper', color: 'white', mb: 1.5, border: '1px solid', borderColor: 'grey.500', borderRadius: 3 }}>
                   <CardContent>
                     <Typography variant="h6" fontWeight="bold">{show.title}</Typography>
-                    <Typography><strong>Date:</strong> {new Date(show.date + 'T00:00:00').toLocaleDateString()}</Typography>
+                    <Typography><strong>Date:</strong> {formatShowDate(show.date)}</Typography>
                     <Typography><strong>Time:</strong> {show.timeStart} &ndash; {show.timeEnd}</Typography>
                     <Typography>
                       <strong>Address:</strong>{' '}

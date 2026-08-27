@@ -18,6 +18,7 @@ import type { Show } from "../../types/show";
 import DeleteConfirmDialog from "./DeleteConfirmDialog";
 import EventDialog from "./EventDialog";
 import { normalizeDay, WORKER_URL } from "./adminUtils";
+import { todayISO } from "../../utils/date";
 
 function Admin() {
   const [shows, setShows] = useState<Show[]>([]);
@@ -149,7 +150,9 @@ function Admin() {
     navigate("/login");
   };
 
-  const today = new Date().toISOString().split("T")[0];
+  // Local, not `toISOString()` — that returns the UTC date, which in Arizona flips to
+  // tomorrow at 17:00 and moved a show into "past" while it was still being played.
+  const today = todayISO();
   const upcomingCount = shows.filter((s) => s.date >= today).length;
   const pastCount = shows.filter((s) => s.date && s.date < today).length;
 
