@@ -47,11 +47,7 @@ function VideoCard({ src, orientation, index }: { src: string; orientation: Orie
 function VideoGallery() {
   return (
     <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
-      <PageMeta
-        title="Video Gallery"
-        path="/videos"
-        description="Watch Take Cover! AZ in action — live performance videos from shows across Arizona."
-      />
+      <PageMeta path="/videos" />
       <PageHeader title="Video Gallery" subtitle="Watch us in action" />
       <Container maxWidth="lg" sx={{ py: 5, px: 2 }}>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 3 }}>

@@ -20,6 +20,7 @@ import EventDialog from "./EventDialog";
 import { normalizeDay, WORKER_URL } from "./adminUtils";
 import { todayISO } from "../../utils/date";
 import { normalizeUrl } from "../../utils/url";
+import { NoIndex } from "../../components/shared/PageMeta";
 
 function Admin() {
   const [shows, setShows] = useState<Show[]>([]);
@@ -160,6 +161,7 @@ function Admin() {
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "#0a0a0a", pt: "100px" }}>
+      <NoIndex />
       <Container maxWidth="lg" sx={{ px: { xs: 1.5, md: 2 } }}>
         {/* Header */}
         <Box

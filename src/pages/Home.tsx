@@ -13,10 +13,7 @@ import PageMeta from '../components/shared/PageMeta';
 function Home() {
   return (
     <>
-      <PageMeta
-        title="Take Cover! AZ"
-        path="/"
-      />
+      <PageMeta path="/" />
       <Box
         sx={{
           backgroundImage: 'url("https://images.pexels.com/photos/2078076/pexels-photo-2078076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',

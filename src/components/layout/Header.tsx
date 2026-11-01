@@ -20,7 +20,7 @@ const NAV_ITEMS = [
   { label: 'Videos', path: '/videos' },
   { label: 'Calendar', path: '/calendar' },
   { label: 'Playlist', path: '/playlist' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Book Us', path: '/contact' },
 ];
 
 function Header() {
@@ -95,7 +95,12 @@ function Header() {
                 key={path}
                 component={RouterLink}
                 to={path}
-                sx={{ color: isActive(path) ? 'primary.main' : 'white' }}
+                variant={path === '/contact' ? 'contained' : 'text'}
+                sx={
+                  path === '/contact'
+                    ? { ml: 1, fontWeight: 'bold', color: 'white' }
+                    : { color: isActive(path) ? 'primary.main' : 'white' }
+                }
               >
                 {label}
               </Button>

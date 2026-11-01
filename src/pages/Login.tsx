@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { WORKER_URL } from "./admin/adminUtils";
+import { NoIndex } from "../components/shared/PageMeta";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -50,6 +51,7 @@ function Login() {
         pb: 6,
       }}
     >
+      <NoIndex />
       <Card
         sx={{
           width: "100%",

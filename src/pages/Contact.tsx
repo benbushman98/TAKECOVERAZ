@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
+import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import { FaFacebook, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
@@ -18,8 +19,59 @@ const MotionBox = motion.create(Box as any);
 interface ContactForm {
   name: string;
   email: string;
+  phone: string;
+  reason: string;
   subject: string;
+  eventType: string;
+  eventDate: string;
+  location: string;
+  guests: string;
   message: string;
+}
+
+const BOOKING = "Book the band";
+const REASONS = [BOOKING, "General question", "Other"];
+const EVENT_TYPES = [
+  "Wedding",
+  "Corporate event",
+  "Private party",
+  "Bar / restaurant / venue",
+  "Festival / community event",
+  "Other",
+];
+
+const EMPTY_FORM: ContactForm = {
+  name: "",
+  email: "",
+  phone: "",
+  reason: BOOKING,
+  subject: "",
+  eventType: "",
+  eventDate: "",
+  location: "",
+  guests: "",
+  message: "",
+};
+
+/** Booking details are folded into the subject and message so the existing EmailJS template still works. */
+function buildEmail(form: ContactForm) {
+  if (form.reason !== BOOKING) {
+    const details = form.phone ? `Phone: ${form.phone}\n\n` : "";
+    return { subject: form.subject || form.reason, message: details + form.message };
+  }
+  const lines = [
+    ["Event type", form.eventType],
+    ["Event date", form.eventDate],
+    ["Location", form.location],
+    ["Expected guests", form.guests],
+    ["Phone", form.phone],
+  ]
+    .filter(([, v]) => v.trim())
+    .map(([k, v]) => `${k}: ${v}`);
+  const subject = ["Booking request", form.eventType, form.eventDate && `on ${form.eventDate}`]
+    .filter(Boolean)
+    .join(" — ");
+  return { subject, message: `${lines.join("\n")}\n\n${form.message}` };
 }
 
 const inputSx = {
@@ -36,12 +88,8 @@ const inputSx = {
 
 function Contact() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [form, setForm] = useState<ContactForm>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<ContactForm>(EMPTY_FORM);
+  const isBooking = form.reason === BOOKING;
   const [status, setStatus] = useState("");
 
   const handleChange = (
@@ -49,6 +97,10 @@ function Contact() {
   ) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
+
+  const setField = (field: keyof ContactForm) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => setForm({ ...form, [field]: e.target.value });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,6 +112,7 @@ function Contact() {
     }
 
     setStatus("Sending...");
+    const { subject, message } = buildEmail(form);
 
     emailjs
       .send(
@@ -68,8 +121,8 @@ function Contact() {
         {
           name: form.name,
           email: form.email,
-          subject: form.subject,
-          message: form.message,
+          subject,
+          message,
           time: new Date().toLocaleString(),
           "g-recaptcha-response": recaptchaToken,
         },
@@ -77,7 +130,7 @@ function Contact() {
       )
       .then(() => {
         setStatus("Message sent successfully! Thank you for reaching out!");
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setForm(EMPTY_FORM);
         recaptchaRef.current?.reset();
       })
       .catch(() => setStatus("Something went wrong. Please try again."));
@@ -85,12 +138,8 @@ function Contact() {
 
   return (
     <Box sx={{ mt: { xs: "124px", sm: "124px" } }}>
-      <PageMeta
-        title="Contact Us"
-        path="/contact"
-        description="Book Take Cover! AZ for your event or get in touch. We'd love to hear from you about upcoming gigs across Arizona."
-      />
-      <PageHeader title="Contact Us" subtitle="Got a gig? A question? Just want to say hey?" />
+      <PageMeta path="/contact" />
+      <PageHeader title="Book Us" subtitle="Weddings, parties, corporate events, venues — tell us about your gig." />
 
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 6, md: 4 } }}>
@@ -225,18 +274,94 @@ function Contact() {
                 sx={inputSx}
               />
               <TextField
-                id="subject"
-                label="Subject"
+                id="phone"
+                label="Phone (optional)"
+                type="tel"
                 variant="outlined"
                 fullWidth
-                required
-                value={form.subject}
+                value={form.phone}
                 onChange={handleChange}
                 sx={inputSx}
               />
               <TextField
+                select
+                id="reason"
+                label="What can we help with?"
+                variant="outlined"
+                fullWidth
+                value={form.reason}
+                onChange={setField("reason")}
+                sx={inputSx}
+              >
+                {REASONS.map((r) => (
+                  <MenuItem key={r} value={r}>{r}</MenuItem>
+                ))}
+              </TextField>
+
+              {isBooking ? (
+                <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, columnGap: 2 }}>
+                  <TextField
+                    select
+                    id="eventType"
+                    label="Type of event"
+                    variant="outlined"
+                    fullWidth
+                    required
+                    value={form.eventType}
+                    onChange={setField("eventType")}
+                    sx={inputSx}
+                  >
+                    {EVENT_TYPES.map((t) => (
+                      <MenuItem key={t} value={t}>{t}</MenuItem>
+                    ))}
+                  </TextField>
+                  <TextField
+                    id="eventDate"
+                    label="Event date"
+                    type="date"
+                    variant="outlined"
+                    fullWidth
+                    value={form.eventDate}
+                    onChange={handleChange}
+                    InputLabelProps={{ shrink: true }}
+                    sx={{ ...inputSx, "& input::-webkit-calendar-picker-indicator": { filter: "invert(1)" } }}
+                  />
+                  <TextField
+                    id="location"
+                    label="City / venue"
+                    variant="outlined"
+                    fullWidth
+                    value={form.location}
+                    onChange={handleChange}
+                    sx={inputSx}
+                  />
+                  <TextField
+                    id="guests"
+                    label="Expected guests"
+                    type="number"
+                    variant="outlined"
+                    fullWidth
+                    value={form.guests}
+                    onChange={handleChange}
+                    inputProps={{ min: 1 }}
+                    sx={inputSx}
+                  />
+                </Box>
+              ) : (
+                <TextField
+                  id="subject"
+                  label="Subject"
+                  variant="outlined"
+                  fullWidth
+                  value={form.subject}
+                  onChange={handleChange}
+                  sx={inputSx}
+                />
+              )}
+
+              <TextField
                 id="message"
-                label="Message"
+                label={isBooking ? "Tell us about your event" : "Message"}
                 variant="outlined"
                 fullWidth
                 required
@@ -267,7 +392,7 @@ function Contact() {
                   textTransform: "uppercase",
                 }}
               >
-                Send Message
+                {isBooking ? "Request a Booking" : "Send Message"}
               </Button>
 
               {status && (

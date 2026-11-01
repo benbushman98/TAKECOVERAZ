@@ -1,0 +1,43 @@
+{
+  "siteName": "Take Cover! AZ",
+  "baseUrl": "https://takecoveraz.com",
+  "image": "https://takecoveraz.com/images/theBand.webp",
+  "pages": {
+    "/": {
+      "title": "Take Cover! AZ — Live Cover Band for Hire in Phoenix & Arizona",
+      "description": "Take Cover! AZ is a high-energy rock and pop cover band playing weddings, private parties, corporate events and venues across the Phoenix area and Arizona. See shows and book us.",
+      "changefreq": "monthly",
+      "priority": "1.0"
+    },
+    "/calendar": {
+      "title": "Upcoming Shows & Live Music Dates | Take Cover! AZ",
+      "description": "See where Take Cover! AZ is playing next — upcoming live music dates at bars, restaurants and events around Phoenix and across Arizona.",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    "/contact": {
+      "title": "Book a Live Cover Band in Arizona | Take Cover! AZ",
+      "description": "Book Take Cover! AZ, a live rock and pop cover band, for your wedding, private party, corporate event or venue anywhere in Arizona.",
+      "changefreq": "yearly",
+      "priority": "0.9"
+    },
+    "/about": {
+      "title": "About the Band | Take Cover! AZ",
+      "description": "Meet the members of Take Cover! AZ — a seasoned rock/pop cover band performing hits from the 60s through today across Arizona.",
+      "changefreq": "yearly",
+      "priority": "0.7"
+    },
+    "/playlist": {
+      "title": "Song List & Playlist | Take Cover! AZ",
+      "description": "Browse the Take Cover! AZ song list — hits from the Beatles, Queen, Bon Jovi, The Killers and many more, from the 60s to today.",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    "/videos": {
+      "title": "Live Videos | Take Cover! AZ",
+      "description": "Watch Take Cover! AZ in action — live performance videos from shows across Arizona.",
+      "changefreq": "monthly",
+      "priority": "0.6"
+    }
+  }
+}
