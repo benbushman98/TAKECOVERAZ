@@ -19,6 +19,7 @@ import DeleteConfirmDialog from "./DeleteConfirmDialog";
 import EventDialog from "./EventDialog";
 import { normalizeDay, WORKER_URL } from "./adminUtils";
 import { todayISO } from "../../utils/date";
+import { normalizeUrl } from "../../utils/url";
 
 function Admin() {
   const [shows, setShows] = useState<Show[]>([]);
@@ -106,6 +107,7 @@ function Admin() {
     const showToSave = {
       ...editingShow,
       day: normalizeDay(editingShow.day),
+      link: normalizeUrl(editingShow.link),
     };
     const isExistingShow = shows.some((s) => s.id === editingShow.id);
     const nextShows = isExistingShow

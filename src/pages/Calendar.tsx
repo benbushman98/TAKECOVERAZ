@@ -19,6 +19,7 @@ import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
 import type { Show } from '../types/show';
 import { formatShowDate, isUpcoming, todayISO } from '../utils/date';
+import { displayUrl, normalizeUrl } from '../utils/url';
 
 const SKELETON_COUNT = 4;
 
@@ -105,8 +106,8 @@ function Calendar() {
                           </Link>
                           {show.link && (
                             <Box sx={{ mt: 1 }}>
-                              <Link href={show.link} target="_blank" rel="noopener noreferrer" variant="body2">
-                                {show.link}
+                              <Link href={normalizeUrl(show.link)} target="_blank" rel="noopener noreferrer" variant="body2">
+                                {displayUrl(show.link)}
                               </Link>
                             </Box>
                           )}
@@ -154,8 +155,8 @@ function Calendar() {
                       </Typography>
                     )}
                     {show.link && (
-                      <Link href={show.link} target="_blank" rel="noopener noreferrer" variant="body2" sx={{ mt: 1, display: 'block' }}>
-                        {show.link}
+                      <Link href={normalizeUrl(show.link)} target="_blank" rel="noopener noreferrer" variant="body2" sx={{ mt: 1, display: 'block' }}>
+                        {displayUrl(show.link)}
                       </Link>
                     )}
                   </CardContent>
