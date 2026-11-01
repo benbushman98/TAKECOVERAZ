@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
-import { FaFacebook, FaYoutube, FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
 import PageMeta from "../components/shared/PageMeta";
 
@@ -208,6 +208,27 @@ function Contact() {
                 }}
               >
                 <FaFacebook />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://www.instagram.com/takecoveraz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                sx={{
+                  color: "white",
+                  border: "1px solid",
+                  borderColor: "grey.700",
+                  borderRadius: 1,
+                  fontSize: "1.4rem",
+                  "&:hover": {
+                    borderColor: "primary.main",
+                    color: "primary.main",
+                    bgcolor: "transparent",
+                  },
+                }}
+              >
+                <FaInstagram />
               </IconButton>
               <IconButton
                 component="a"

@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import { FaFacebook, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function Social() {
   return (
@@ -15,6 +15,16 @@ function Social() {
           sx={{ color: 'black', fontSize: '1.875rem' }}
         >
           <FaFacebook />
+        </IconButton>
+        <IconButton
+          component="a"
+          href="https://www.instagram.com/takecoveraz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram Profile"
+          sx={{ color: 'black', fontSize: '1.875rem' }}
+        >
+          <FaInstagram />
         </IconButton>
         <IconButton
           component="a"
