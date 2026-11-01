@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/webp" href="/favicon.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- GitHub Pages BrowserRouter SPA redirect handler -->
+  <script type="text/javascript">
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+
+  <!-- SEO. Tags marked data-rh are replaced by react-helmet once the app loads, and
+       scripts/postbuild.mjs fills in each page's own values in the built HTML so search
+       engines and link previews (Facebook, iMessage) see the right text without JS. -->
+  <title>Live Videos | Take Cover! AZ</title>
+  <meta data-rh="true" name="description"
+    content="Watch Take Cover! AZ in action — live performance videos from shows across Arizona." />
+  <link data-rh="true" rel="canonical" href="https://takecoveraz.com/videos" />
+
+  <!-- Open Graph -->
+  <meta data-rh="true" property="og:title" content="Live Videos | Take Cover! AZ" />
+  <meta data-rh="true" property="og:description"
+    content="Watch Take Cover! AZ in action — live performance videos from shows across Arizona." />
+  <meta data-rh="true" property="og:type" content="website" />
+  <meta data-rh="true" property="og:url" content="https://takecoveraz.com/videos" />
+  <meta data-rh="true" property="og:site_name" content="Take Cover! AZ" />
+  <meta data-rh="true" property="og:image" content="https://takecoveraz.com/images/theBand.webp" />
+  <meta data-rh="true" property="og:image:type" content="image/webp" />
+  <meta data-rh="true" property="og:image:alt" content="Take Cover! AZ band photo" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+  <meta data-rh="true" name="twitter:title" content="Live Videos | Take Cover! AZ" />
+  <meta data-rh="true" name="twitter:description"
+    content="Watch Take Cover! AZ in action — live performance videos from shows across Arizona." />
+  <meta data-rh="true" name="twitter:image" content="https://takecoveraz.com/images/theBand.webp" />
+
+  <!-- Who the band is, for Google's knowledge panel and rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Take Cover!",
+    "alternateName": ["Take Cover! AZ", "Take Cover AZ"],
+    "url": "https://takecoveraz.com/",
+    "logo": "https://takecoveraz.com/logo512.webp",
+    "image": "https://takecoveraz.com/images/theBand.webp",
+    "description": "High-energy rock and pop cover band playing weddings, private parties, corporate events and venues across Arizona.",
+    "genre": ["Rock", "Pop", "Cover band"],
+    "areaServed": { "@type": "State", "name": "Arizona" },
+    "sameAs": [
+      "https://www.facebook.com/takecoveraz/",
+      "https://www.youtube.com/@takecover2434"
+    ]
+  }
+  </script>
+
+  <!-- Apple / iOS -->
+  <link rel="apple-touch-icon" href="/favicon.webp" />
+  <meta name="apple-mobile-web-app-title" content="Take Cover AZ" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/index-CCD5-5q3.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D1BvHnp2.css">
+</head>
+
+<body style="background-color: #000; color: #fff;">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>
