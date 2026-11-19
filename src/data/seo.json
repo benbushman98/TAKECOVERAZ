@@ -38,6 +38,18 @@
       "description": "Watch Take Cover! AZ in action — live performance videos from shows across Arizona.",
       "changefreq": "monthly",
       "priority": "0.6"
+    },
+    "/privacy": {
+      "title": "Privacy Policy | Take Cover! AZ",
+      "description": "How the Take Cover! AZ website handles the information you send us through the booking form, and which outside services the site uses.",
+      "changefreq": "yearly",
+      "priority": "0.3"
+    },
+    "/accessibility": {
+      "title": "Accessibility Statement | Take Cover! AZ",
+      "description": "Take Cover! AZ wants everyone to be able to use this site. What we've done, what we know still needs work, and how to tell us about a problem.",
+      "changefreq": "yearly",
+      "priority": "0.3"
     }
   }
 }

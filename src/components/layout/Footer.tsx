@@ -47,8 +47,17 @@ function Footer() {
 
         <Social />
       </Box>
-      <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center', pb: 3, px: 2 }}>
-        &copy; {currentYear} Take Cover!
+      <Typography
+        variant="body2"
+        sx={{ color: 'text.secondary', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', columnGap: 3, rowGap: 1, pb: 3, px: 2 }}
+      >
+        <span>&copy; {currentYear} Take Cover!</span>
+        <Link component={RouterLink} to="/privacy" underline="hover" sx={{ color: 'text.secondary', '&:hover': { color: 'common.white' } }}>
+          Privacy policy
+        </Link>
+        <Link component={RouterLink} to="/accessibility" underline="hover" sx={{ color: 'text.secondary', '&:hover': { color: 'common.white' } }}>
+          Accessibility
+        </Link>
       </Typography>
     </Box>
   );

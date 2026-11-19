@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
 
-const youtube = (id: string) => `https://www.youtube.com/embed/${id}`;
+const youtube = (id: string) => `https://www.youtube-nocookie.com/embed/${id}`;
 
 const FEATURED = youtube('Q5SBVhpT4ls');
 const PORTRAIT = youtube('DamPl1rQ33A');

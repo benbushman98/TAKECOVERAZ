@@ -18,6 +18,8 @@ import Calendar from './pages/Calendar';
 import Playlist from './pages/Playlist';
 import VideoGallery from './pages/VideoGallery';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Accessibility from './pages/Accessibility';
 import Login from './pages/Login';
 import Admin from './pages/admin/Admin';
 import ErrorPage from './pages/Error';
@@ -84,8 +86,28 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: 'background.default' }}>
+          <Box
+            component="a"
+            href="#main"
+            sx={{
+              position: 'absolute',
+              left: 8,
+              top: -100,
+              zIndex: 2000,
+              bgcolor: 'primary.main',
+              color: 'common.white',
+              px: 2,
+              py: 1,
+              borderRadius: 1,
+              fontWeight: 600,
+              textDecoration: 'none',
+              '&:focus': { top: 8 },
+            }}
+          >
+            Skip to content
+          </Box>
           <Header />
-          <Box sx={{ flexGrow: 1 }}>
+          <Box component="main" id="main" tabIndex={-1} sx={{ flexGrow: 1, outline: 'none' }}>
             <Routes>
               <Route path="/" element={<Home />} errorElement={<ErrorPage />} />
               <Route path="/about" element={<About />} errorElement={<ErrorPage />} />
@@ -93,6 +115,8 @@ function App() {
               <Route path="/playlist" element={<Playlist />} errorElement={<ErrorPage />} />
               <Route path="/videos" element={<VideoGallery />} errorElement={<ErrorPage />} />
               <Route path="/contact" element={<Contact />} errorElement={<ErrorPage />} />
+              <Route path="/privacy" element={<Privacy />} errorElement={<ErrorPage />} />
+              <Route path="/accessibility" element={<Accessibility />} errorElement={<ErrorPage />} />
               <Route path="/login" element={<Login />} errorElement={<ErrorPage />} />
               <Route path="/admin" element={<AdminRoute />} />
               <Route path="*" element={<Navigate to="/" replace />} />

@@ -10,7 +10,8 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
-import { FaFacebook, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom";
+import { FaFacebook,FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
 import PageMeta from "../components/shared/PageMeta";
 
@@ -401,6 +402,10 @@ function Contact() {
               >
                 {isBooking ? "Request a booking" : "Send message"}
               </Button>
+              <Typography variant="body2" sx={{ color: "text.secondary", mt: 1.5, textAlign: "center" }}>
+                We only use your details to reply to you.{" "}
+                <Link component={RouterLink} to="/privacy">Privacy policy</Link>
+              </Typography>
 
               {status && (
                 <Typography

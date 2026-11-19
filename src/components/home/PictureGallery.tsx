@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { Link as RouterLink } from 'react-router-dom';
 
-const FEATURED_VIDEO = 'https://www.youtube.com/embed/Q5SBVhpT4ls';
+const FEATURED_VIDEO = 'https://www.youtube-nocookie.com/embed/Q5SBVhpT4ls';
 
 const imgSx = {
   width: '100%',
