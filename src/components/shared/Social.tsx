@@ -2,41 +2,28 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
+const LINKS = [
+  { href: 'https://www.facebook.com/takecoveraz/', label: 'Take Cover! on Facebook', Icon: FaFacebook },
+  { href: 'https://www.instagram.com/takecoveraz/', label: 'Take Cover! on Instagram', Icon: FaInstagram },
+  { href: 'https://www.youtube.com/@takecover2434', label: 'Take Cover! on YouTube', Icon: FaYoutube },
+];
+
 function Social() {
   return (
-    <Box sx={{ textAlign: 'center', width: '100%', py: 1 }}>
-      <Box sx={{ my: 1, display: 'inline-flex', bgcolor: 'white', borderRadius: '50px', px: 1, py: 0.5 }}>
+    <Box sx={{ display: 'flex', gap: 0.5 }}>
+      {LINKS.map(({ href, label, Icon }) => (
         <IconButton
+          key={href}
           component="a"
-          href="https://www.facebook.com/takecoveraz/"
+          href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Facebook Profile"
-          sx={{ color: 'black', fontSize: '1.875rem' }}
+          aria-label={label}
+          sx={{ color: 'text.secondary', fontSize: '1.4rem', '&:hover': { color: 'common.white' } }}
         >
-          <FaFacebook />
+          <Icon />
         </IconButton>
-        <IconButton
-          component="a"
-          href="https://www.instagram.com/takecoveraz/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram Profile"
-          sx={{ color: 'black', fontSize: '1.875rem' }}
-        >
-          <FaInstagram />
-        </IconButton>
-        <IconButton
-          component="a"
-          href="https://www.youtube.com/@takecover2434"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube Profile"
-          sx={{ color: 'black', fontSize: '1.875rem' }}
-        >
-          <FaYoutube />
-        </IconButton>
-      </Box>
+      ))}
     </Box>
   );
 }

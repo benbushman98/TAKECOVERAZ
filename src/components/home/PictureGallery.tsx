@@ -1,153 +1,78 @@
-import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Carousel from 'react-material-ui-carousel';
 import { Link as RouterLink } from 'react-router-dom';
 
-const MotionBox = motion.create(Box as any);
+const FEATURED_VIDEO = 'https://www.youtube.com/embed/Q5SBVhpT4ls';
 
-const ITEMS = [
-  { name: 'Chad', src: 'Chad rockin.webp' },
-  { name: 'Jay', src: 'jay.webp' },
-  { name: 'Rob', src: 'rob_alvarez_1.webp' },
-  { name: 'Group', src: 'takecover_group.webp' },
-  { name: 'Chad', src: 'Chad 4.webp' },
-  { name: 'Jay', src: 'jay_2.webp' },
-  { name: 'Rob', src: 'rob_alvarez_2.webp' },
-  { name: 'Jay', src: 'takecover_drum.webp' },
-];
-
-const VIDEO_URLS = [
-  "https://www.youtube.com/embed/Q5SBVhpT4ls",
-  "https://www.youtube.com/embed/uPLO5Rw1h5c",
-  "https://www.youtube.com/embed/Bu3uq56zWpk",
-  "https://www.youtube.com/embed/wKPn5tYczjY",
-];
-
-function VideoPanel({ src }: { src: string }) {
-  return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', py: { xs: 2, lg: 0 } }}>
-      <Box
-        sx={{
-          width: '100%',
-          maxWidth: 460,
-          aspectRatio: '16/9',
-          borderRadius: 3,
-          overflow: 'hidden',
-          bgcolor: 'black',
-        }}
-      >
-        <Box
-          component="iframe"
-          title="Take Cover Band Showcase"
-          src={src}
-          sx={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-          allowFullScreen
-        />
-      </Box>
-    </Box>
-  );
-}
-
-function GalleryItem({ item }: { item: { name: string; src: string } }) {
-  return (
-    <Paper elevation={3} sx={{ borderRadius: 3, overflow: 'hidden' }}>
-      <Box sx={{ width: '100%', height: 420, overflow: 'hidden', borderRadius: 3 }}>
-        <Box
-          component="img"
-          alt={item.name}
-          src={`/images/${item.src}`}
-          sx={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-            display: 'block',
-          }}
-        />
-      </Box>
-    </Paper>
-  );
-}
+const imgSx = {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  display: 'block',
+  borderRadius: 1,
+};
 
 function PictureGallery() {
   return (
-    <Box sx={{ width: '100%', m: 0, px: { xs: 1.5, lg: 5 }, mb: 5 }}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <Typography variant="h4" sx={{ color: 'grey.400', textAlign: 'center', mt: 5, fontWeight: 'bold' }}>
-          See the Band in Action
-        </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5, mb: 3 }}>
-          <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
+    <Box component="section">
+      <Container maxWidth="lg" sx={{ py: { xs: 7, md: 11 } }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: 2, mb: 3 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '3rem', md: '4.5rem' } }}>
+            Hear us live
+          </Typography>
+          <Link component={RouterLink} to="/videos" sx={{ fontWeight: 600, fontSize: '1.05rem' }}>
+            More videos
+          </Link>
         </Box>
-      </motion.div>
 
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
-        <MotionBox
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}
-        >
-          <VideoPanel src={VIDEO_URLS[0]} />
-          <VideoPanel src={VIDEO_URLS[2]} />
-        </MotionBox>
-
-        <MotionBox
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
-          sx={{ flexGrow: 1, minWidth: { xs: '100%', lg: 0 } }}
-        >
-          <Carousel autoPlay animation="slide" interval={4000} navButtonsAlwaysVisible sx={{ borderRadius: 3, overflow: 'hidden' }}>
-            {ITEMS.map((item, i) => (
-              <GalleryItem key={i} item={item} />
-            ))}
-          </Carousel>
-        </MotionBox>
-
-        <MotionBox
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          sx={{ width: { xs: '100%', lg: '30%' }, display: 'flex', flexDirection: 'column', gap: 1.5 }}
-        >
-          <VideoPanel src={VIDEO_URLS[1]} />
-          <VideoPanel src={VIDEO_URLS[3]} />
-        </MotionBox>
-      </Box>
-
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-        <Button
-          component={RouterLink}
-          to="/videos"
-          variant="outlined"
-          size="large"
+        <Box
           sx={{
-            color: 'white',
-            borderColor: 'primary.main',
-            fontWeight: 'bold',
-            letterSpacing: 2,
-            px: 4,
-            py: 1.25,
-            textTransform: 'uppercase',
-            '&:hover': { borderColor: 'primary.dark', bgcolor: 'primary.main' },
+            display: 'grid',
+            gap: { xs: 1, md: 1.5 },
+            gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(4, 1fr)' },
+            gridTemplateAreas: {
+              xs: '"video video" "chad rob" "band band" "drum drum"',
+              md: '"video video video chad" "video video video rob" "band band band drum"',
+            },
+            gridTemplateRows: { md: '236px 236px 340px' },
           }}
         >
-          See More Videos
-        </Button>
-      </Box>
+          <Box sx={{ gridArea: 'video', bgcolor: 'black', borderRadius: 1, overflow: 'hidden', aspectRatio: { xs: '16 / 9', md: 'auto' } }}>
+            <Box
+              component="iframe"
+              title="Take Cover! playing live"
+              src={FEATURED_VIDEO}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              sx={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+            />
+          </Box>
+
+          <Box sx={{ gridArea: 'chad', aspectRatio: { xs: '1 / 1', md: 'auto' } }}>
+            <Box component="img" src="/images/Chad rockin.webp" alt="Chad on guitar under red stage lights" loading="lazy" sx={{ ...imgSx, objectPosition: 'center 20%' }} />
+          </Box>
+          <Box sx={{ gridArea: 'rob', aspectRatio: { xs: '1 / 1', md: 'auto' } }}>
+            <Box component="img" src="/images/rob_alvarez_1.webp" alt="Rob playing bass" loading="lazy" sx={{ ...imgSx, objectPosition: 'center 20%' }} />
+          </Box>
+
+          <Box component="figure" sx={{ gridArea: 'band', m: 0, position: 'relative', aspectRatio: { xs: '2 / 1', md: 'auto' } }}>
+            <Box component="img" src="/images/theBand.webp" alt="Chad, Jay and Rob playing an outdoor stage" loading="lazy" sx={{ ...imgSx, objectPosition: 'center 45%' }} />
+            <Box
+              component="figcaption"
+              sx={{ position: 'absolute', left: 12, bottom: 12, bgcolor: '#000', px: 1.5, py: 0.75, borderRadius: 0.5, fontWeight: 600, fontSize: '0.95rem' }}
+            >
+              Chad, Jay and Rob
+            </Box>
+          </Box>
+          <Box sx={{ gridArea: 'drum', aspectRatio: { xs: '2 / 1', md: 'auto' } }}>
+            <Box component="img" src="/images/takecover_drum.webp" alt="Jay behind the drum kit" loading="lazy" sx={{ ...imgSx, objectPosition: 'center 35%' }} />
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 }

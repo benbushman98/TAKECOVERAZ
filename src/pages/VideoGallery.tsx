@@ -1,58 +1,79 @@
-import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
 import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
 
-const MotionBox = motion.create(Box as any);
+const youtube = (id: string) => `https://www.youtube.com/embed/${id}`;
 
-type Orientation = 'landscape' | 'portrait';
+const FEATURED = youtube('Q5SBVhpT4ls');
+const PORTRAIT = youtube('DamPl1rQ33A');
+const PAIR = [youtube('uPLO5Rw1h5c'), youtube('Bu3uq56zWpk')];
+const TRIO = [youtube('wKPn5tYczjY'), youtube('IYxXZbga_Uw'), youtube('0A1HkxHHyy0')];
 
-const VIDEOS: { src: string; orientation: Orientation }[] = [
-  { src: 'https://www.youtube.com/embed/Q5SBVhpT4ls', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/uPLO5Rw1h5c', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/Bu3uq56zWpk', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/wKPn5tYczjY', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/IYxXZbga_Uw', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/0A1HkxHHyy0', orientation: 'landscape' },
-  { src: 'https://www.youtube.com/embed/DamPl1rQ33A', orientation: 'portrait' },
-];
-
-function VideoCard({ src, orientation, index }: { src: string; orientation: Orientation; index: number }) {
-  const isPortrait = orientation === 'portrait';
+function Video({ src, title }: { src: string; title: string }) {
   return (
-    <MotionBox
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut', delay: (index % 3) * 0.08 }}
-      sx={{ width: isPortrait ? { xs: '70%', sm: '45%', md: '22%' } : { xs: '100%', sm: '45%', md: '30%' } }}
-    >
-      <Paper elevation={3} sx={{ borderRadius: 3, overflow: 'hidden', bgcolor: 'black' }}>
-        <Box sx={{ width: '100%', aspectRatio: isPortrait ? '9/16' : '16/9' }}>
-          <Box
-            component="iframe"
-            title="Take Cover Band video"
-            src={src}
-            sx={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-            allowFullScreen
-          />
-        </Box>
-      </Paper>
-    </MotionBox>
+    <Box
+      component="iframe"
+      title={title}
+      src={src}
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      sx={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+    />
   );
 }
 
+const tileSx = { bgcolor: 'black', borderRadius: 1, overflow: 'hidden' };
+
 function VideoGallery() {
   return (
-    <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+    <Box>
       <PageMeta path="/videos" />
-      <PageHeader title="Video Gallery" subtitle="Watch us in action" />
-      <Container maxWidth="lg" sx={{ py: 5, px: 2 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 3 }}>
-          {VIDEOS.map((video, i) => (
-            <VideoCard key={video.src} src={video.src} orientation={video.orientation} index={i} />
+      <PageHeader title="Videos" subtitle="Watch us in action" image="/images/header-videos.webp" imagePosition="center 45%" />
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gap: { xs: 1, md: 1.5 },
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(12, 1fr)' },
+          }}
+        >
+          {/* Featured video with the one portrait video standing beside it */}
+          <Box sx={{ ...tileSx, gridColumn: { sm: '1 / -1', md: 'span 9' }, aspectRatio: '16 / 9' }}>
+            <Video src={FEATURED} title="Take Cover! featured live video" />
+          </Box>
+          <Box
+            sx={{
+              ...tileSx,
+              gridColumn: { sm: '1 / -1', md: 'span 3' },
+              aspectRatio: { xs: '9 / 16', md: 'auto' },
+              width: { xs: '100%', sm: 320, md: 'auto' },
+              justifySelf: { xs: 'center', md: 'stretch' },
+              maxWidth: { xs: 360, md: 'none' },
+            }}
+          >
+            <Video src={PORTRAIT} title="Take Cover! live video (vertical)" />
+          </Box>
+
+          {PAIR.map((src, i) => (
+            <Box key={src} sx={{ ...tileSx, gridColumn: { md: 'span 6' }, aspectRatio: '16 / 9' }}>
+              <Video src={src} title={`Take Cover! live video ${i + 2}`} />
+            </Box>
+          ))}
+
+          {TRIO.map((src, i) => (
+            <Box
+              key={src}
+              sx={{
+                ...tileSx,
+                gridColumn: { sm: i === 2 ? '1 / -1' : 'auto', md: 'span 4' },
+                aspectRatio: '16 / 9',
+              }}
+            >
+              <Video src={src} title={`Take Cover! live video ${i + 4}`} />
+            </Box>
           ))}
         </Box>
       </Container>

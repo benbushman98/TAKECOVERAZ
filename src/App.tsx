@@ -22,30 +22,51 @@ import Login from './pages/Login';
 import Admin from './pages/admin/Admin';
 import ErrorPage from './pages/Error';
 
+const DISPLAY_FONT = '"Big Shoulders Display", "Arial Narrow", sans-serif';
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
       main: '#C8102E',
+      light: '#E8566B',
     },
     background: {
-      default: '#0a0a0a',
-      paper: '#141414',
+      default: '#0b0b0b',
+      paper: '#151515',
     },
+    text: {
+      primary: '#f2f2f2',
+      secondary: '#b3b3b3',
+    },
+    divider: 'rgba(255,255,255,0.12)',
   },
+  shape: { borderRadius: 6 },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-    h1: { fontFamily: '"Oswald", sans-serif' },
-    h2: { fontFamily: '"Oswald", sans-serif' },
-    h3: { fontFamily: '"Oswald", sans-serif' },
-    h4: { fontFamily: '"Oswald", sans-serif' },
-    h5: { fontFamily: '"Oswald", sans-serif' },
-    h6: { fontFamily: '"Oswald", sans-serif' },
+    fontFamily: '"Archivo", "Helvetica Neue", Arial, sans-serif',
+    h1: { fontFamily: DISPLAY_FONT, fontWeight: 900, lineHeight: 0.95, textTransform: 'uppercase' },
+    h2: { fontFamily: DISPLAY_FONT, fontWeight: 800, lineHeight: 1, textTransform: 'uppercase' },
+    h3: { fontFamily: DISPLAY_FONT, fontWeight: 800, lineHeight: 1.05 },
+    h4: { fontFamily: DISPLAY_FONT, fontWeight: 800, lineHeight: 1.1 },
+    h5: { fontFamily: DISPLAY_FONT, fontWeight: 700 },
+    h6: { fontFamily: DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.01em' },
+    body1: { lineHeight: 1.6 },
+    button: { textTransform: 'none', fontWeight: 600, letterSpacing: 0, fontSize: '0.95rem' },
   },
   components: {
     MuiAppBar: {
       styleOverrides: {
         root: { backgroundColor: '#000' },
+      },
+    },
+    MuiLink: {
+      defaultProps: { color: 'primary.light' },
+    },
+    MuiButton: {
+      defaultProps: { disableElevation: true },
+      styleOverrides: {
+        root: { borderRadius: 4, padding: '8px 18px' },
+        sizeLarge: { padding: '12px 26px', fontSize: '1rem' },
       },
     },
   },
@@ -62,7 +83,7 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <ScrollToTop />
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: 'black' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: 'background.default' }}>
           <Header />
           <Box sx={{ flexGrow: 1 }}>
             <Routes>
@@ -77,9 +98,7 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Box>
-          <Box sx={{ bgcolor: 'black', height: '75px' }}>
-            <Footer />
-          </Box>
+          <Footer />
         </Box>
       </BrowserRouter>
     </ThemeProvider>

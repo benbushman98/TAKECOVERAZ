@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -6,73 +5,67 @@ import BandMembers from '../components/about/BandMembers';
 import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
 
-const MotionBox = motion.create(Box as any);
+const bodySx = { color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.7, mb: 2, maxWidth: '62ch' };
 
 function About() {
   return (
-    <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+    <Box>
       <PageMeta path="/about" />
-      <PageHeader title="About Us" />
-      <Container sx={{ mb: 5, px: 2 }}>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center', py: 3 }}>
-          <MotionBox
-            component="img"
-            src="/images/theBand.webp"
-            alt="the band"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            sx={{ borderRadius: 2, width: { xs: '100%', md: '50%' }, maxHeight: 420, objectFit: 'cover' }}
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            style={{ flex: 1 }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" fontWeight="bold" sx={{ color: 'grey.300', textTransform: 'uppercase', mb: 2 }}>
-                Take Cover!
-              </Typography>
-              <Typography sx={{ color: 'grey.400', fontSize: '1rem', lineHeight: 1.8 }}>
-                If you are planning a special event or private party and want a great entertainment
-                option &quot;Take Cover!&quot; is the right choice. As seasoned professionals, we
-                have the talent to deliver a fantastic performance that will keep your guests dancing
-                and wanting more! Our extensive playlist includes hits from the 60&apos;s, 70&apos;s,
-                80&apos;s, 90&apos;s, and beyond! &quot;Take Cover!&quot; performs hits from
-                generations past to the present from the very best rock n roll bands including The
-                Beatles, Rolling Stones, Stevie Wonder, Aerosmith, Rod Stewart, Cheap Trick, ZZ Top,
-                Tom Petty, AC/DC, U2, Tears for Fears, Simple Minds, The Cars, Bon Jovi, Spin
-                Doctors, R.E.M., The Killers, Weezer, Neon Trees, Maroon 5, Sublime, Queen and so
-                much more! Finding the right musical entertainment can be a challenge, so why not
-                hire &quot;Take Cover!&quot; and leave the music to us! Check out our live video for
-                music samples or see us in person to get the real feel of the band in action.
-              </Typography>
-            </Box>
-          </motion.div>
+      <PageHeader title="About us" subtitle="Three Arizona musicians playing rock, pop and country hits for every kind of crowd." image="/images/header-about.webp" imagePosition="center 40%" />
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            gap: { xs: 4, md: 7 },
+            alignItems: 'stretch',
+          }}
+        >
+          <Box sx={{ position: 'relative', minHeight: { xs: 240, md: 360 }, borderRadius: 1.5, overflow: 'hidden' }}>
+            <Box
+              component="img"
+              src="/images/theBand.webp"
+              alt="Take Cover! on stage"
+              sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
+            />
+          </Box>
+          <Box>
+            <Typography sx={{ ...bodySx, color: 'text.primary', fontSize: '1.2rem' }}>
+              If you are planning a special event or private party and want a great entertainment
+              option, Take Cover! is the right choice. As seasoned professionals, we have the talent
+              to deliver a fantastic performance that will keep your guests dancing and wanting more.
+            </Typography>
+            <Typography sx={bodySx}>
+              Our playlist covers hits from the &apos;60s, &apos;70s, &apos;80s, &apos;90s and beyond,
+              from The Beatles, Rolling Stones, Stevie Wonder, Aerosmith, Rod Stewart, Cheap Trick,
+              ZZ Top, Tom Petty, AC/DC, U2, Tears for Fears, Simple Minds, The Cars, Bon Jovi, Spin
+              Doctors, R.E.M., The Killers, Weezer, Neon Trees, Maroon 5, Sublime, Queen and many more.
+            </Typography>
+            <Typography sx={bodySx}>
+              Finding the right musical entertainment can be a challenge, so leave the music to us.
+              Check out our live videos for samples, or come see us at a show to get the real feel of
+              the band.
+            </Typography>
+          </Box>
         </Box>
       </Container>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <Box sx={{ bgcolor: 'grey.900', py: 2.5, textAlign: 'center' }}>
-          <Typography variant="h4" sx={{ textTransform: 'uppercase', color: 'grey.300', fontWeight: 'bold', letterSpacing: '0.15em' }}>
-            Members
+      <Box component="section" sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '2.5rem', md: '3.25rem' }, mb: 4 }}>
+            The band
           </Typography>
-        </Box>
-      </motion.div>
-
-      <Container maxWidth="lg" sx={{ mt: 4, pb: 5, px: 2 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, alignItems: 'stretch' }}>
-          <BandMembers />
-        </Box>
-      </Container>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
+              gap: 2,
+            }}
+          >
+            <BandMembers />
+          </Box>
+        </Container>
+      </Box>
     </Box>
   );
 }

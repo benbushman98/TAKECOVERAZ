@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { motion } from "motion/react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import Box from "@mui/material/Box";
@@ -8,13 +7,12 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import { FaFacebook, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
 import PageHeader from "../components/shared/PageHeader";
 import PageMeta from "../components/shared/PageMeta";
-
-const MotionBox = motion.create(Box as any);
 
 interface ContactForm {
   name: string;
@@ -137,55 +135,37 @@ function Contact() {
   };
 
   return (
-    <Box sx={{ mt: { xs: "124px", sm: "124px" } }}>
+    <Box>
       <PageMeta path="/contact" />
-      <PageHeader title="Book Us" subtitle="Weddings, parties, corporate events, venues — tell us about your gig." />
+      <PageHeader title="Book us" subtitle="Weddings, parties, corporate events and venues. Tell us about your gig." image="/images/header-book.webp" imagePosition="center 40%" />
 
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 6, md: 4 } }}>
           {/* Left — info & socials */}
-          <MotionBox
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <Box
             sx={{ flex: "1 1 280px", color: "white" }}
           >
-            <Typography
-              variant="h5"
-              fontWeight="bold"
-              sx={{
-                color: "primary.main",
-                mb: 1,
-                textTransform: "uppercase",
-                letterSpacing: 2,
-              }}
-            >
-              Get In Touch
+            <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
+              Get in touch
             </Typography>
-            <Divider sx={{ borderColor: "grey.800", mb: 3 }} />
-            <Typography sx={{ color: "grey.300", lineHeight: 1.8, mb: 4 }}>
-              Reach out with any questions, booking inquiries, or suggestions.
-              We'd love to hear from you — whether it's about an upcoming event
-              or just to talk rock.
+            <Typography sx={{ color: "text.secondary", lineHeight: 1.7, mb: 4, maxWidth: "48ch" }}>
+              Send us your questions, booking requests or suggestions. We&apos;re
+              happy to talk about an upcoming event, or just to talk rock.
             </Typography>
 
             <Box
               sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}
             >
               <FaEnvelope color="#C8102E" size={18} />
-              <Typography sx={{ color: "grey.300" }}>
+              <Link href="mailto:jayklepinger@gmail.com" sx={{ color: "text.primary" }}>
                 jayklepinger@gmail.com
-              </Typography>
+              </Link>
             </Box>
 
             <Divider sx={{ borderColor: "grey.800", my: 3 }} />
 
-            <Typography
-              variant="overline"
-              sx={{ color: "grey.500", letterSpacing: 3 }}
-            >
-              Follow Us
+            <Typography sx={{ color: "text.secondary", fontWeight: 600 }}>
+              Follow us
             </Typography>
             <Box sx={{ display: "flex", gap: 1, mt: 1.5 }}>
               <IconButton
@@ -252,14 +232,26 @@ function Contact() {
                 <FaYoutube />
               </IconButton>
             </Box>
-          </MotionBox>
+
+            <Box
+              component="figure"
+              sx={{ m: 0, mt: 5, display: { xs: "none", md: "block" } }}
+            >
+              <Box
+                component="img"
+                src="/images/theBand.webp"
+                alt="Chad, Jay and Rob playing an outdoor stage"
+                loading="lazy"
+                sx={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover", objectPosition: "center 40%", borderRadius: 1.5, display: "block" }}
+              />
+              <Typography component="figcaption" sx={{ color: "text.secondary", mt: 1.5 }}>
+                Chad, Jay and Rob, live in Arizona
+              </Typography>
+            </Box>
+          </Box>
 
           {/* Right — form */}
-          <MotionBox
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <Box
             sx={{ flex: "1 1 400px" }}
           >
             <Box
@@ -405,15 +397,9 @@ function Contact() {
                 type="submit"
                 variant="contained"
                 fullWidth
-                sx={{
-                  fontWeight: "bold",
-                  letterSpacing: 2,
-                  py: 1.5,
-                  fontSize: "1rem",
-                  textTransform: "uppercase",
-                }}
+                size="large"
               >
-                {isBooking ? "Request a Booking" : "Send Message"}
+                {isBooking ? "Request a booking" : "Send message"}
               </Button>
 
               {status && (
@@ -430,7 +416,7 @@ function Contact() {
                 </Typography>
               )}
             </Box>
-          </MotionBox>
+          </Box>
         </Box>
       </Container>
     </Box>

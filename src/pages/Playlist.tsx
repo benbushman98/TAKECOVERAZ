@@ -1,31 +1,32 @@
-import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import { Link as RouterLink } from 'react-router-dom';
 import PlaylistCard from '../components/playlist/PlaylistCard';
 import PageHeader from '../components/shared/PageHeader';
 import PageMeta from '../components/shared/PageMeta';
+import playlist from '../data/playlist.json';
 
 function Playlist() {
   return (
-    <Box sx={{ mt: { xs: '124px', sm: '124px' } }}>
+    <Box>
       <PageMeta path="/playlist" />
-      <PageHeader title="Playlist" />
-      <Container sx={{ pt: 4 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
-            <Paper variant="outlined" sx={{ width: '100%', maxWidth: 700, border: '4px solid', borderColor: 'grey.900' }}>
-              <Box sx={{ px: 2 }}>
-                <PlaylistCard />
-              </Box>
-            </Paper>
-          </Box>
-        </motion.div>
+      <PageHeader
+        title="Playlist"
+        subtitle={`All ${playlist.length} songs we play right now, from the '60s to today.`}
+        image="/images/header-playlist.webp"
+        imagePosition="center 50%"
+      />
+      <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
+        <PlaylistCard />
+        <Typography sx={{ color: 'text.secondary', mt: 5, fontSize: '1.05rem' }}>
+          Don&apos;t see a song you want?{' '}
+          <Link component={RouterLink} to="/contact">
+            Ask when you book us
+          </Link>
+          . We take requests.
+        </Typography>
       </Container>
     </Box>
   );

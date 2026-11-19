@@ -1,47 +1,52 @@
-import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
+  /** Photo shown on the right of the header, fading into the background. */
+  image?: string;
+  /** CSS object-position for the photo, e.g. "center 30%". */
+  imagePosition?: string;
 }
 
-export default function PageHeader({ title, subtitle }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle, image, imagePosition = 'center' }: PageHeaderProps) {
   return (
     <Box
-      sx={{
-        width: '100%',
-        py: { xs: 6, md: 8 },
-        bgcolor: 'background.paper',
-        borderBottom: '3px solid',
-        borderColor: 'primary.main',
-        textAlign: 'center',
-      }}
+      component="header"
+      sx={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid', borderColor: 'divider', bgcolor: '#000' }}
     >
-      <motion.div
-        initial={{ opacity: 0, y: -16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.55, ease: 'easeOut' }}
-      >
-        <Typography
-          variant="h2"
-          fontWeight="bold"
-          sx={{ color: 'white', letterSpacing: 2, textTransform: 'uppercase', fontSize: { xs: '2.5rem', md: '3.75rem' } }}
-        >
+      {image && (
+        <Box aria-hidden sx={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: { xs: '100%', md: '62%' } }}>
+          <Box
+            component="img"
+            src={image}
+            alt=""
+            sx={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition, display: 'block' }}
+          />
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              background: {
+                xs: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 100%)',
+                md: 'linear-gradient(to right, #000 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.15) 100%)',
+              },
+            }}
+          />
+        </Box>
+      )}
+      <Container maxWidth="lg" sx={{ position: 'relative', pt: { xs: 6, md: 10 }, pb: { xs: 5, md: 7 } }}>
+        <Typography variant="h1" sx={{ fontSize: { xs: '3.25rem', md: '5.5rem' } }}>
           {title}
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1.5 }}>
-          <Divider sx={{ width: 80, borderColor: 'primary.main', borderWidth: 2 }} />
-        </Box>
         {subtitle && (
-          <Typography sx={{ color: 'grey.400', mt: 2, fontSize: '1.1rem' }}>
+          <Typography sx={{ color: 'rgba(255,255,255,0.85)', mt: 1.5, fontSize: '1.15rem', maxWidth: '46ch' }}>
             {subtitle}
           </Typography>
         )}
-      </motion.div>
+      </Container>
     </Box>
   );
 }
